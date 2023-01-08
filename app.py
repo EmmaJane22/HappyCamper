@@ -27,6 +27,26 @@ def get_sites():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if username already exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username unavailable. Please try a different username.")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "firstname": request.form.get("firstname").lower(),
+            "lastname": request.form.get("lastname").lower(),
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into session cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Sign up successful!")
     return render_template("register.html")
 
 
