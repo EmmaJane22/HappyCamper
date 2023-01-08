@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <h3 class="center-align">Sign Up</h3>
+    
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+            <div class="card-panel">
+                <div class="row">
+                    <!--First name field -->
+                    <div class="input-field col s6">
+                        <i class="fa-solid fa-user prefix teal-text text-darken-4"></i>
+                        <input id="firstname" name="firstname" type="text" class="validate" required>
+                        <label for="firstname">First Name</label>
+                    </div>
+                    <!--Last name field -->
+                    <div class="input-field col s6">
+                        <i class="fa-solid fa-user prefix teal-text text-darken-4"></i>
+                        <input id="lastname" name="lastname" type="text" class="validate" required>
+                        <label for="lastname">Last Name</label>
+                    </div>
+                    <!--Username field -->
+                    <div class="input-field col s12">
+                        <i class="fa-solid fa-user-shield prefix teal-text text-darken-4"></i>
+                        <input id="username" name="username" type="text" class="validate" required>
+                        <label for="username">Username</label>
+                    </div>
+                    <!--password field -->
+                    <div class="input-field col s12">
+                        <i class="fa-solid fa-lock prefix teal-text text-darken-4"></i>
+                        <input id="password" name="password" type="text" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <!--submit button-->
+                    <div class="row">
+                        <button type="submit" class="col s8 offset-m2 btn-large orange darken-4 text-shadow">
+                            SIGN UP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+  </div>
+
+{% endblock %}
