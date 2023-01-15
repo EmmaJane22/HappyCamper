@@ -144,6 +144,15 @@ def edit_review(site_id):
     locations = mongo.db.locations.find().sort("location_name", 1)
     return render_template("edit_review.html", site=site, locations=locations)
 
+
+# Delete button functionality
+@app.route("/delete_review/<site_id>")
+def delete_review(site_id):
+    mongo.db.sites.delete_one({"_id":ObjectId(site_id)})
+    flash("Review Deleted")
+    return redirect(url_for("get_sites"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
