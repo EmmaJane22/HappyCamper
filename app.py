@@ -124,6 +124,13 @@ def add_review():
     return render_template("add_review.html", locations=locations)
 
 
+# edit button functionality
+@app.route("/edit_review/<site_id>", methods=["GET", "POST"])
+def edit_review(site_id):
+    site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
+    locations = mongo.db.locations.find().sort("location_name", 1)
+    return render_template("edit_review.html", site=site, locations=locations)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
