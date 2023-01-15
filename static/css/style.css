@@ -24,3 +24,7 @@
     max-height: 6em;
     overflow: clip;
 }
+
+.card-panel {
+    margin: 15px;
+}

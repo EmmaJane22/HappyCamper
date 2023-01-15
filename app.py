@@ -26,10 +26,8 @@ def landing_page():
 
 @app.route("/get_sites")
 def get_sites():
-    sites = mongo.db.sites.find()
+    sites = list(mongo.db.sites.find())
     return render_template("sites.html", sites=sites)
-
-
 
 
 # view review
@@ -39,6 +37,13 @@ def view_review(site_id):
 
     return render_template("view_review.html", site=site)
 
+
+# search
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    sites = list(mongo.db.sites.find({"$text": {"$search": query}}))
+    return render_template("sites.html", sites=sites)
 
 
 # register
