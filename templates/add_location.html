@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Add Location</h3>
+
+    <!-- site review form from Materialize -->
+    <div class="row card-panel grey lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('add_location') }}">
+            <!-- location name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-location-dot prefix"></i>
+                    <input id="location_name" name="location_name" minlength="3"  maxlength="20" 
+                    type="text" class="validate" required>
+                    <label for="location_name">Location Name</label>
+                </div>
+            </div>
+            <!-- Submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large green">
+                        Add Location <i class="fas fa-circle-plus right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
