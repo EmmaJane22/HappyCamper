@@ -11,7 +11,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-campground prefix"></i>
                     <input id="site_name" name="site_name" minlength="5"  maxlength="50" 
-                    type="text" class="validate" required>
+                    value="{{ site.site_name }}" type="text" class="validate" required>
                     <label for="site_name">Site Name</label>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-location-dot prefix"></i>
                         <select id="location_name" name="location_name" class="validate" required>
-                        <option value="" disabled selected>Choose location</option>
+                        <option value="" disabled>Choose location</option>
                         {% for location in locations %}
                             {% if location.location_name == site.location_name %}
                                 <option value="{{ location.location_name }}" selected>{{ location.location_name }}</option>
@@ -36,7 +36,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix"></i>
-                    <input id="visit_date" name="visit_date" type="text" class="datepicker">
+                    <input id="visit_date" name="visit_date" type="text"
+                        value="{{ site.visit_date }}" class="datepicker">
                     <label for="visit_date">Date of camp</label>
                 </div>
             </div>
@@ -45,7 +46,9 @@
                 <div class="input-field col s12">
                     <i class="fas fa-pen prefix"></i>
                     <textarea id="site_review" name="site_review" minlength="5"
-                    maxlength="200" class="materialize-textarea validate" required></textarea>
+                        maxlength="200" class="materialize-textarea validate" required>
+                    {{- site.site_review -}}
+                    </textarea>
                     <label for="site_review">Review</label>
                 </div>
             </div>
@@ -56,7 +59,11 @@
                         <i class="fas fa-people-group prefix"></i>
                         <label for="members_only">
                             Members Only?
-                            <input type="checkbox" id="members_only" name="members_only">
+                            {% if site.members_only == "on" %}
+                                <input type="checkbox" id="members_only" name="members_only" checked>
+                            {% else %}
+                                <input type="checkbox" id="members_only" name="members_only">
+                            {% endif %}
                             <span class="lever"></span>
                         </label>
                     </div>
@@ -65,6 +72,10 @@
             <!-- Edit button -->
             <div class="row">
                 <div class="col s12 center-align">
+                    <!-- cancel button -->
+                    <a href="{{ url_for('get_sites') }}" class="btn-large red">
+                        Cancel <i class="fas fa-circle-xmark right"></i>
+                    </a>
                     <button type="submit" class="btn-large">
                         Edit Review <i class="fas fa-circle-plus right"></i>
                     </button>
