@@ -116,9 +116,9 @@ def add_review():
             "members_only": members_only,
             "created_by": session["user"]
         }
-        mondo.db.sites.insert_one(review)
+        mongo.db.sites.insert_one(review)
         flash("Review Successfully Added")
-        return redirect(url_for("get_reviews"))
+        return redirect(url_for("get_sites"))
 
     locations = mongo.db.locations.find().sort("location_name", 1)
     return render_template("add_review.html", locations=locations)
