@@ -19,3 +19,8 @@
 .card-panel-home {
     height: 300px;
 }
+
+.site-title {
+    max-height: 6em;
+    overflow: clip;
+}

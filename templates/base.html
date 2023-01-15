@@ -21,13 +21,13 @@
         <!--Materialize Top Nav Bar-->
         <nav class="nav-extended text-shadow #ff6e40 deep-orange accent-2">
             <div class="nav-wrapper">
-              <a href="{{ url_for('get_sites') }}" class="brand-logo">Happy Camper</a>
+              <a href="{{ url_for('landing_page') }}" class="brand-logo">Happy Camper</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fa-solid fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('get_sites') }}">Home</a></li>
+                <li><a href="{{ url_for('landing_page') }}">Home</a></li>
+                <li><a href="{{ url_for('get_sites') }}">Find Campsite</a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="#">Find Campsite</a></li>
                     <li><a href="{{ url_for('add_review') }}">Add Review</a></li>
                     {% if session.user|lower == "admin"|lower %}
                         <li><a href="{{ url_for('get_locations') }}">Manage Locations</a></li>
@@ -44,7 +44,8 @@
         <!--Materialize Mobile Collapse Button Nav Bar-->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align deep-orange-text text-darken-4">Happy Camper</h4></li>
-            <li><a href="{{ url_for('get_sites') }}">Home</a></li>
+            <li><a href="{{ url_for('landing_page') }}">Home</a></li>
+            <li><a href="{{ url_for('get_sites') }}">Find Campsite</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="#">Find Campsite</a></li>

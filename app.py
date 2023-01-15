@@ -19,18 +19,25 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/landing_page")
+def landing_page():
+    sites = mongo.db.sites.find()
+    return render_template("index.html", sites=sites)
+
 @app.route("/get_sites")
 def get_sites():
     sites = mongo.db.sites.find()
     return render_template("sites.html", sites=sites)
 
 
+
+
 # view review
 @app.route("/view_review/<site_id>")
 def view_review(site_id):
-    review = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
+    site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
 
-    return render_template("view_review.html", review=review)
+    return render_template("view_review.html", site=site)
 
 
 
