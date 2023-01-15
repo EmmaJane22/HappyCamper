@@ -106,7 +106,8 @@ def logout():
 # add review function
 @app.route("/add_review")
 def add_review():
-    return render_template("add_review.html")
+    locations = mongo.db.locations.find().sort("location_name", 1)
+    return render_template("add_review.html", locations=locations)
 
 
 if __name__ == "__main__":

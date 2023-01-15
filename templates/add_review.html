@@ -19,9 +19,13 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-location-dot prefix"></i>
-                    <input id="location_name" name="location_name" minlength="5"  maxlength="50" 
-                    type="text" class="validate" required>
-                    <label for="location_name">Location:</label>
+                        <select id="location_name" name="location_name" class="validate" required>
+                        <option value="" disabled selected>Choose location</option>
+                        {% for location in locations %}
+                            <option value="{{ location.location_name }}">{{ location.location_name }}</option>
+                        {% endfor %}
+                        </select>
+                        <label for="location_name">Location:</label>
                 </div>
             </div>
             <!-- date picker from Materialize -->
