@@ -76,7 +76,7 @@ def login():
         else:
             # username does not exist
             flash("Incorrect username and/or password")
-            return render_template(url_for("login"))
+            return redirect(url_for("login"))
 
     return render_template("login.html")
 
@@ -127,6 +127,19 @@ def add_review():
 # edit button functionality
 @app.route("/edit_review/<site_id>", methods=["GET", "POST"])
 def edit_review(site_id):
+    if request.method == "POST":
+        members_only = "on" if request.form.get("members_only") else "off"
+        submit = {
+            "site_name": request.form.get("site_name"),
+            "location_name": request.form.get("location_name"),
+            "visit_date": request.form.get("visit_date"),
+            "site_review": request.form.get("site_review"),
+            "members_only": members_only,
+            "created_by": session["user"]
+        }
+        mongo.db.sites.replace_one({"_id": ObjectId(site_id)}, submit)
+        flash("Review Successfully Edited")
+
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
     locations = mongo.db.locations.find().sort("location_name", 1)
     return render_template("edit_review.html", site=site, locations=locations)
