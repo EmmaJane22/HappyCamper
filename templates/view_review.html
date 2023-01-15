@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Site Review</h3>
+
+    <!-- site review -->
+    <div class="col s12">
+        <div class="card-panel grey lighten-5">
+            <!-- site name -->
+            <div class="center-align">
+            <h3>{{ site.site_name }}</h3>
+            </div>
+
+            <!-- site location -->
+            <div class="center-align">
+                <p>{{ site.location_name }}</p>
+            </div>
+
+            <!-- visit date -->
+            <div class="center-align">
+                <p>{{ site.visit_date }}</p>
+            </div>
+            
+            <!-- review -->
+            <div class="center-align">
+                <p>{{ site.site_review }}</p>
+            </div>
+
+               
+            <!-- Back button -->
+            <div class="row">
+                <!-- back button -->
+                <div class="col s12 center-align"></div>
+                    <a href="{{ url_for('get_sites') }}" class="btn-large green">
+                    Back <i class="fas fa-rotate-left right"></i>
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+{% endblock %}

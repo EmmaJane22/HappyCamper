@@ -25,6 +25,16 @@ def get_sites():
     return render_template("sites.html", sites=sites)
 
 
+# view review
+@app.route("/view_review/<site_id>")
+def view_review(site_id):
+    review = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
+
+    return render_template("view_review.html", review=review)
+
+
+
+# register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -49,6 +59,7 @@ def register():
         flash("Sign up successful!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
+
 
 # login
 @app.route("/login", methods=["GET", "POST"])

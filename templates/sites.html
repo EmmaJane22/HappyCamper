@@ -26,7 +26,9 @@
                     <p>Review by: {{ site.created_by }}</p>
                 </div>
 
+
                 <div class="center-align">
+                    <a href="{{ url_for('view_review', site_id=site._id) }}" class="btn-small green">View</a>
                     {% if session.user|lower == site.created_by|lower %}
                         <a href="{{ url_for('delete_review', site_id=site._id) }}" class="btn-small red">Delete</a>
                         <a href="{{ url_for('edit_review', site_id=site._id) }}" class="btn-small light-blue lighten-1">Edit</a>
