@@ -104,8 +104,22 @@ def logout():
 
 
 # add review function
-@app.route("/add_review")
+@app.route("/add_review", methods=["GET", "POST"])
 def add_review():
+    if request.method == "POST":
+        members_only = "on" if request.form.get("members_only") else "off"
+        review = {
+            "site_name": request.form.get("site_name"),
+            "location_name": request.form.get("location_name"),
+            "visit_date": request.form.get("visit_date"),
+            "site_review": request.form.get("site_review"),
+            "members_only": members_only,
+            "created_by": session["user"]
+        }
+        mondo.db.sites.insert_one(review)
+        flash("Review Successfully Added")
+        return redirect(url_for("get_reviews"))
+
     locations = mongo.db.locations.find().sort("location_name", 1)
     return render_template("add_review.html", locations=locations)
 

@@ -5,14 +5,14 @@
 
     <!-- site review form from Materialize -->
     <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
             <!-- site name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-campground prefix"></i>
                     <input id="site_name" name="site_name" minlength="5"  maxlength="50" 
                     type="text" class="validate" required>
-                    <label for="site_name">Site Name:</label>
+                    <label for="site_name">Site Name</label>
                 </div>
             </div>
             <!-- location -->
@@ -25,7 +25,7 @@
                             <option value="{{ location.location_name }}">{{ location.location_name }}</option>
                         {% endfor %}
                         </select>
-                        <label for="location_name">Location:</label>
+                        <label for="location_name">Location</label>
                 </div>
             </div>
             <!-- date picker from Materialize -->
@@ -33,7 +33,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix"></i>
                     <input id="visit_date" name="visit_date" type="text" class="datepicker">
-                    <label for="visit_date">Date of camp:</label>
+                    <label for="visit_date">Date of camp</label>
                 </div>
             </div>
             <!-- review text area -->
@@ -42,7 +42,7 @@
                     <i class="fas fa-pen prefix"></i>
                     <textarea id="site_review" name="site_review" minlength="5"
                     maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="site_review">Review:</label>
+                    <label for="site_review">Review</label>
                 </div>
             </div>
             <!-- Members Only? switch -->
@@ -56,6 +56,14 @@
                             <span class="lever"></span>
                         </label>
                     </div>
+                </div>
+            </div>
+            <!-- Submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large">
+                        Add Review <i class="fas fa-circle-plus right"></i>
+                    </button>
                 </div>
             </div>
         </form>
