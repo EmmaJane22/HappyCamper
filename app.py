@@ -161,7 +161,7 @@ def get_locations():
 
 
 # Add Locations
-@app.route("/add_locations", methods=["GET", "POST"])
+@app.route("/add_location", methods=["GET", "POST"])
 def add_location():
     if request.method == "POST":
         location = {
@@ -173,6 +173,20 @@ def add_location():
 
     return render_template("add_location.html")
 
+
+# Edit locations
+@app.route("/edit_location/<location_id>", methods=["GET", "POST"])
+def edit_location(location_id):
+    if request.method == "POST":
+        submit = {
+            "location_name": request.form.get("location_name")
+        }
+        mongo.db.locations.replace_one({"_id": ObjectId(location_id)}, submit)
+        flash("Location Updated")
+        return redirect(url_for("get_locations"))
+
+    location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
+    return render_template("edit_location.html", location=location)
 
 
 if __name__ == "__main__":
