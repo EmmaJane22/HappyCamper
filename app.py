@@ -189,6 +189,14 @@ def edit_location(location_id):
     return render_template("edit_location.html", location=location)
 
 
+# Delete locations
+@app.route("/delete_location/<location_id>")
+def delete_location(location_id):
+    mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
+    flash("Location deleted")
+    return redirect(url_for("get_locations"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
