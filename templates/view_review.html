@@ -13,19 +13,34 @@
 
             <!-- site location -->
             <div class="center-align">
-                <p>{{ site.location_name }}</p>
+                <p><i class="fas fa-location-dot prefix"></i> Site Location: {{ site.location_name }}</p>
             </div>
 
             <!-- visit date -->
             <div class="center-align">
-                <p>{{ site.visit_date }}</p>
+                <p><i class="fas fa-calendar-alt prefix"></i> Visit date: {{ site.visit_date }}</p>
             </div>
             
             <!-- review -->
             <div class="center-align">
-                <p>{{ site.site_review }}</p>
+                <p><i class="fas fa-pen prefix"></i> Review: {{ site.site_review }}</p>
             </div>
 
+            <!-- members only -->
+            <div class="center-align">
+                <div class="switch">
+                    <i class="fas fa-people-group prefix"></i>
+                    <label for="members_only">
+                        Members Only?
+                        {% if site.members_only == "on" %}
+                            <input disabled type="checkbox" id="members_only" name="members_only" checked>
+                        {% else %}
+                            <input disabled type="checkbox" id="members_only" name="members_only">
+                        {% endif %}
+                        <span class="lever"></span>
+                    </label>
+                </div>
+            </div>
                
             <!-- Back button -->
             <div class="row">
