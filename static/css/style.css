@@ -7,6 +7,15 @@
     background-color: #E9C46A;
 }
 
+/* --- Hero Image --- */
+.bg-image {
+    width: 100%;
+    height: 400px;
+    background: url('../images/site-hero-image.png') no-repeat center center;
+    background-size: cover;
+    margin: auto;
+}
+
 /* --- Sites page --- */
 .card-margin {
     margin: 15px;
