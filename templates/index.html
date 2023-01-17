@@ -36,22 +36,22 @@
     <div class="row card-icon">
         <div class="col s12 m6 l4 center-align">
             <div class="card-panel">
-                <i class="fas fa-search blue-grey-text darken-3"></i>
-                <h4 class="blue-grey-text darken-3">Search</h4>
+                <a href="{{ url_for('get_sites') }}"><i class="fas fa-search blue-grey-text darken-3"></i></a>
+                <a href="{{ url_for('get_sites') }}"><h4 class="blue-grey-text darken-3">Search</h4></a>
                 <p>Discover campsites across the UK</p>
             </div>
         </div>
         <div class="col s12 m6 l4 center-align">
             <div class="card-panel">
-                <i class="fas fa-file-lines blue-grey-text darken-3"></i>
-                <h4 class="blue-grey-text darken-3">Submit</h4>
+                <a href="{{ url_for('login') }}"><i class="fas fa-file-lines blue-grey-text darken-3"></i></a>
+                <a href="{{ url_for('login') }}"><h4 class="blue-grey-text darken-3">Submit</h4></a>
                 <p>Share your reviews with fellow campers</p>
             </div>
         </div>
         <div class="col s12 m6 l4 center-align">
             <div class="card-panel">
-                <i class="fas fa-heart blue-grey-text darken-3"></i>
-                <h4 class="blue-grey-text darken-3">Save</h4>
+                <a href="{{ url_for('login') }}"><i class="fas fa-heart blue-grey-text darken-3"></i></a>
+                <a href="{{ url_for('login') }}"><h4 class="blue-grey-text darken-3">Save</h4></a>
                 <p>Save your favourite sites in one place</p>
             </div>
         </div>
