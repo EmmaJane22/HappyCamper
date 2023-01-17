@@ -12,6 +12,14 @@ body {
     font-weight: 400;
     color: black;
     background-color: #90A4AE;
+    /* Sticky footer taken from Materialize */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+  
+main {
+    flex: 1 0 auto;
 }
 
 h1,
@@ -82,4 +90,18 @@ h4 {
 
 .card-icon i {
     font-size: xx-large;
+}
+
+.social-media-icon {
+    font-size: 2rem;
+    color: #fafafa;
+    padding: 20px;
+}
+
+.social-media-hover i:hover {
+    color: #0277bd;
+}
+
+footer li {
+    display: inline;
 }
