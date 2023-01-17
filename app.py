@@ -24,6 +24,7 @@ def landing_page():
     sites = mongo.db.sites.find()
     return render_template("index.html", sites=sites)
 
+
 @app.route("/get_sites")
 def get_sites():
     sites = list(mongo.db.sites.find())
@@ -150,18 +151,21 @@ def add_review():
 # edit button functionality
 @app.route("/edit_review/<site_id>", methods=["GET", "POST"])
 def edit_review(site_id):
-    if request.method == "POST":
-        members_only = "on" if request.form.get("members_only") else "off"
-        submit = {
-            "site_name": request.form.get("site_name"),
-            "location_name": request.form.get("location_name"),
-            "visit_date": request.form.get("visit_date"),
-            "site_review": request.form.get("site_review"),
-            "members_only": members_only,
-            "created_by": session["user"]
-        }
-        mongo.db.sites.replace_one({"_id": ObjectId(site_id)}, submit)
-        flash("Review Successfully Edited")
+    site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
+    if ((session["user"].lower() == site["created_by"].lower()) or (session["user"] == "admin")):
+        if request.method == "POST":
+        
+            members_only = "on" if request.form.get("members_only") else "off"
+            submit = {
+                "site_name": request.form.get("site_name"),
+                "location_name": request.form.get("location_name"),
+                "visit_date": request.form.get("visit_date"),
+                "site_review": request.form.get("site_review"),
+                "members_only": members_only,
+                "created_by": session["user"]
+            }
+            mongo.db.sites.replace_one({"_id": ObjectId(site_id)}, submit)
+            flash("Review Successfully Edited")
 
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
     locations = mongo.db.locations.find().sort("location_name", 1)
@@ -171,8 +175,10 @@ def edit_review(site_id):
 # Delete button functionality
 @app.route("/delete_review/<site_id>")
 def delete_review(site_id):
-    mongo.db.sites.delete_one({"_id":ObjectId(site_id)})
-    flash("Review Deleted")
+    site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
+    if ((session["user"].lower() == site["created_by"].lower()) or (session["user"] == "admin")):
+        mongo.db.sites.delete_one({"_id":ObjectId(site_id)})
+        flash("Review Deleted")
     return redirect(url_for("get_sites"))
 
 
