@@ -78,7 +78,7 @@ h4 {
 }
 
 .site-title {
-    max-height: 6em;
+    max-height: 2em;
     overflow: clip;
     color: #37474f;
 }
