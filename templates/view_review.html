@@ -9,7 +9,12 @@
         <div class="card-panel grey lighten-5">
             <!-- site name -->
             <div class="center-align">
-            <h3>{{ site.site_name }}</h3>
+            <h3 class="review-title">{{ site.site_name }}</h3>
+            </div>
+
+            <!-- site image -->
+            <div class="row">
+                <img src="{{ site.image_url }}" alt="campsite image">
             </div>
 
             <!-- site location -->
@@ -41,6 +46,10 @@
                         <span class="lever"></span>
                     </label>
                 </div>
+            </div>
+            <!-- review created by-->
+            <div class="center-align">
+                <p>Reviewed by: {{ site.created_by }}</p>
             </div>
                
             <!-- Back button -->

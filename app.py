@@ -138,6 +138,7 @@ def add_review():
             "visit_date": request.form.get("visit_date"),
             "site_review": request.form.get("site_review"),
             "members_only": members_only,
+            "image_url": request.form.get("image_url"),
             "created_by": session["user"]
         }
         mongo.db.sites.insert_one(review)
@@ -162,6 +163,7 @@ def edit_review(site_id):
                 "visit_date": request.form.get("visit_date"),
                 "site_review": request.form.get("site_review"),
                 "members_only": members_only,
+                "image_url": request.form.get("image_url"),
                 "created_by": session["user"]
             }
             mongo.db.sites.replace_one({"_id": ObjectId(site_id)}, submit)
