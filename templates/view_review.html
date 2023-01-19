@@ -22,38 +22,48 @@
                     
                     <div class="col s12 l8">
                         <!-- site location -->
-                        <div class="center-align">
-                            <p><i class="fas fa-location-dot prefix"></i> Site Location: {{ site.location_name }}</p>
+                        <div class="row">
+                            <div class="left-align">
+                                <p><i class="fas fa-location-dot prefix small"></i> Site Location: {{ site.location_name }}</p>
+                            </div>
                         </div>
 
                         <!-- visit date -->
-                        <div class="center-align">
-                            <p><i class="fas fa-calendar-alt prefix"></i> Visit date: {{ site.visit_date }}</p>
+                        <div class="row">
+                            <div class="left-align">
+                                <p><i class="fas fa-calendar-alt prefix small"></i> Visit date: {{ site.visit_date }}</p>
+                            </div>
                         </div>
                         
                         <!-- review -->
-                        <div class="center-align">
-                            <p><i class="fas fa-pen prefix"></i> Review: {{ site.site_review }}</p>
+                        <div class="row">
+                            <div class="left-align">
+                                <p><i class="fas fa-pen prefix small"></i> Review: {{ site.site_review }}</p>
+                            </div>
                         </div>
 
                         <!-- members only -->
-                        <div class="center-align">
-                            <div class="switch">
-                                <i class="fas fa-people-group prefix"></i>
-                                <label for="members_only">
-                                    Members Only?
-                                    {% if site.members_only == "on" %}
-                                        <input disabled type="checkbox" id="members_only" name="members_only" checked>
-                                    {% else %}
-                                        <input disabled type="checkbox" id="members_only" name="members_only">
-                                    {% endif %}
-                                    <span class="lever"></span>
-                                </label>
+                        <div class="row">
+                            <div class="left-align">
+                                <div class="switch">
+                                    <i class="fas fa-people-group prefix small"></i>
+                                    <label for="members_only">
+                                        Members Only?
+                                        {% if site.members_only == "on" %}
+                                            <input disabled type="checkbox" id="members_only" name="members_only" checked>
+                                        {% else %}
+                                            <input disabled type="checkbox" id="members_only" name="members_only">
+                                        {% endif %}
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <!-- review created by-->
-                        <div class="center-align">
-                            <p>Reviewed by: {{ site.created_by }}</p>
+                        <div class="row">
+                            <div class="left-align">
+                                <p>Reviewed by: {{ site.created_by }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

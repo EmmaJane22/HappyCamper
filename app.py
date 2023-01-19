@@ -84,7 +84,7 @@ def login():
 
         # if user exists
         if existing_user:
-        # check password matches
+            # check password matches
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
@@ -114,7 +114,7 @@ def profile(username):
 
     if session["user"]:
         return render_template("profile.html", username=username)
-    
+
     return redirect(url_for("login"))
 
 
@@ -153,9 +153,10 @@ def add_review():
 @app.route("/edit_review/<site_id>", methods=["GET", "POST"])
 def edit_review(site_id):
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
-    if ((session["user"].lower() == site["created_by"].lower()) or (session["user"] == "admin")):
+    if ((session["user"].lower() == site["created_by"].lower())
+     or (session["user"] == "admin")):
         if request.method == "POST":
-        
+
             members_only = "on" if request.form.get("members_only") else "off"
             submit = {
                 "site_name": request.form.get("site_name"),
@@ -178,8 +179,9 @@ def edit_review(site_id):
 @app.route("/delete_review/<site_id>")
 def delete_review(site_id):
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
-    if ((session["user"].lower() == site["created_by"].lower()) or (session["user"] == "admin")):
-        mongo.db.sites.delete_one({"_id":ObjectId(site_id)})
+    if ((session["user"].lower() == site["created_by"].lower())
+     or (session["user"] == "admin")):
+        mongo.db.sites.delete_one({"_id": ObjectId(site_id)})
         flash("Review Deleted")
     return redirect(url_for("get_sites"))
 
