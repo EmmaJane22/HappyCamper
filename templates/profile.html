@@ -1,70 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container"> 
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <h3 class="center-align light-blue-text text-darken-4">
-                    {{username}}'s Profile
-                </h3>
-                <!-- display users favourite sites -->
-                <h4 class="center-align light-blue-text text-darken-4">
-                    Favourite Sites
-                </h4>
+<div class="container">
+    <h3 class="center-align">
+        {{username}}'s Campsites
+    </h3>
 
-                <!-- Check if there are more than 0 favourites and display them as cards -->
-                {% if favourite_sites|length > 0 %}
-                <div class="row center-align card-margin">
-                    {% for favourite_site in favourite_sites %}
-                        <!-- Card from Materialize for site review cards -->
-                        <div class="col s12 m6 l4">
-                            <div class="card shadow">
-                                <!-- site image -->
-                                
-                                {% if favourite_site.image_url != ""  %}
-                                    <div class="card-image site-image" style="background-image:url('{{ favourite_site.image_url }}');">
-                                {% else %}
-                                    <div class="card-image site-image" style="background-image: url('/static/images/tent-image.jpg');">
-                                {% endif %}
-                                </div>
-                                <!-- site name -->
-                                <div class="center-align site-title">
-                                    <h5><strong>{{ favourite_site.site_name }}</strong></h5>
-                                </div>
 
-                                <!-- site location -->
-                                <div class="center-align">
-                                    <p>{{ favourite_site.location_name }}</p>
-                                </div>
-
-                                <!-- created by -->
-                                <div class="center-align">
-                                    <p>Reviewed by: {{ favourite_site.created_by }}</p>
-                                </div>
-
-                                <div class="center-align">
-                                    <a href="{{ url_for('view_review', site_id=site._id) }}" class="btn-small blue-grey">View</a>
-                                    <!-- change to unfavourite
-                                        {% if ((session.user|lower == site.created_by|lower) or (session.user == "admin")) %}
-                                        <a href="{{ url_for('delete_review', site_id=site._id) }}" class="btn-small red">Delete</a>
-                                        <a href="{{ url_for('edit_review', site_id=site._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                                    {% endif %}-->
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                {% endif %}
+<!-- Check if there are more than 0 site reviews and display them as cards -->
+{% if sites|length > 0 %}
+<div class="row center-align card-margin">
+    {% for site in sites %}
+        {% if ((session.user|lower == site.created_by|lower)) %}
+        <div class="col s12 m6 l4">
+            <div class="card shadow">
+                <!-- site image -->
                 
-                <!-- display users added site reviews -->
-                <h4 class="center-align light-blue-text text-darken-4">
-                    My Sites
-                </h4>
+                {% if site.image_url != ""  %}
+                    <div class="card-image site-image" style="background-image:url('{{ site.image_url }}');">
+                {% else %}
+                    <div class="card-image site-image" style="background-image: url('/static/images/tent-image.jpg');">
+                {% endif %}
+                </div>
+                <!-- site name -->
+                <div class="center-align site-title">
+                    <h5><strong>{{ site.site_name }}</strong></h5>
+                </div>
+
+                <!-- site location -->
+                <div class="center-align">
+                    <p>{{ site.location_name }}</p>
+                </div>
+
+                <!-- created by -->
+                <div class="center-align">
+                    <p>Reviewed by: {{ site.created_by }}</p>
+                </div>
+
+                <div class="center-align">
+                    <a href="{{ url_for('view_review', site_id=site._id) }}" class="btn-small blue-grey">View</a>
+                    {% if ((session.user|lower == site.created_by|lower) or (session.user == "admin")) %}
+                        <a href="{{ url_for('delete_review', site_id=site._id) }}" class="btn-small red">Delete</a>
+                        <a href="{{ url_for('edit_review', site_id=site._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
+        {% endif %}
+    {% endfor %}
 </div>
-    
+{% else %}
+    <h3 class="center-align">No sites found</h3>
+{% endif %}
+</div>
+  
 
 {% endblock %}

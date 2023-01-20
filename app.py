@@ -106,22 +106,19 @@ def login():
 
 
 # profile page
-@app.route("/profile/<username>", methods=["GET", "POST"])
+@app.route("/profile/<username>", methods=["GET"])
 def profile(username):
-    # take the session user's username from the db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("profile.html", username=username)
-
-    return redirect(url_for("login"))
+    """ Finds and returns reviews added by the session user """
+    user_sites = list(mongo.db.sites.find({"created_by": session["user"]}))
+    sites = list(mongo.db.sites.find())
+    return render_template(
+        "profile.html", username=username, user_sites=user_sites, sites=sites)
 
 
 # log out function
 @app.route("/logout")
 def logout():
-    # remove session cookies
+    """ remove session cookies """
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
