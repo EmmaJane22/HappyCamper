@@ -17,7 +17,11 @@
                 <!-- site image -->
                 <div class="row">
                     <div class="col s12 l4">
-                        <img src="{{ site.image_url }}" alt="campsite image" class="responsive-img">
+                        {% if site.image_url != ""  %}
+                            <img src="{{ site.image_url }}" alt="campsite image" class="responsive-img">
+                        {% else %}
+                            <img src="/static/images/tent-image.jpg" alt="campsite image" class="responsive-img">
+                        {% endif %}
                     </div>
                     
                     <div class="col s12 l8">
