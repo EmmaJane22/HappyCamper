@@ -6,14 +6,34 @@
 
     <div class="row">
         {% for location in locations %}
-            <div class="col s12 m3">
-                <div class="card blue-grey darken-1 center-align">
-                    <div class="card-content white-text">
-                        <span class="card-title">{{ location.location_name }}</span>
+            <div class="col s12 m6 l3">
+                <div class="card card-panel-location center-align">
+                    
+                    <div class="center-align location-title">
+                        <h5><strong>{{ location.location_name }}</strong></h5>
                     </div>
-                    <div class="card-action">
+                        
+                    <div>
                         <a href="{{ url_for('edit_location', location_id=location._id) }}" class="btn green accent-4">Edit</a>
-                        <a href="{{ url_for('delete_location', location_id=location._id) }}" class="btn red">Delete</a>
+                        
+                        <!-- Modal Trigger -->
+                        <button data-target="modal_{{ location._id }}" class="btn red modal-trigger">Delete</button>
+                        <!-- Modal Structure -->
+                        <div id="modal_{{ location._id }}" class="modal">
+                            <div class="modal-content">
+                            <h5><i class="fas fa-triangle-exclamation small"></i> Are you sure you want to delete this location?
+                                <i class="fas fa-triangle-exclamation small"></i></h5>
+                            <p>Deleting a location cannot be undone afterwards</p>
+                            </div>
+                            <div class="modal-footer">
+                                <!-- cancel button -->
+                                <a href="{{ url_for('get_locations') }}" 
+                                class="modal-close waves-effect waves-green btn-flat modal-hover">Cancel</a>
+                                <!-- delete button -->
+                                <a href="{{ url_for('delete_location', location_id=location._id) }}" 
+                                class="modal-close waves-effect waves-green btn-flat modal-hover">Delete</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -22,7 +42,7 @@
 
     <div class="row">
         <div class="col s12 center-align">
-            <a href="{{ url_for('add_location') }}" class="btn-large green">
+            <a href="{{ url_for('add_location') }}" class="btn-large blue-grey">
                 Add Location <i class="fas fa-circle-plus right"></i>
             </a>
         </div>

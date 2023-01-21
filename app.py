@@ -121,7 +121,7 @@ def logout():
     """ remove session cookies """
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("landing_page"))
 
 
 # add review function
@@ -172,7 +172,7 @@ def edit_review(site_id):
     return render_template("edit_review.html", site=site, locations=locations)
 
 
-# Delete button functionality
+# Delete review button functionality
 @app.route("/delete_review/<site_id>")
 def delete_review(site_id):
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
@@ -221,9 +221,10 @@ def edit_location(location_id):
 
 # Delete locations
 @app.route("/delete_location/<location_id>")
-def delete_location(location_id):
-    mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
-    flash("Location deleted")
+def delete_location(location_id): 
+    if (session["user"] == "admin"):
+        mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
+        flash("Location deleted")
     return redirect(url_for("get_locations"))
 
 
