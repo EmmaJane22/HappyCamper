@@ -88,9 +88,8 @@
                     Back <i class="fas fa-rotate-left right"></i>
                     </a>
                     {% if ((session.user|lower == site.created_by|lower) or (session.user == "admin")) %}
-                        <!--<a href="{{ url_for('delete_review', site_id=site._id) }}" class="btn-small red">Delete</a>-->
                         <!-- Modal Trigger -->
-                        <button data-target="modal1" class="btn-small red modal-trigger">Delete Modal</button>
+                        <button data-target="modal1" class="btn-small red modal-trigger">Delete</button>
                         <!-- Modal Structure -->
                         <div id="modal1" class="modal">
                             <div class="modal-content">
@@ -102,6 +101,7 @@
                                 <!-- cancel button -->
                                 <a href="{{ url_for('get_sites') }}" class="btn-flat modal-hover">
                                 Cancel</a>
+                                <!-- delete button -->
                                 <a href="{{ url_for('delete_review', site_id=site._id) }}" 
                                 class="modal-close waves-effect waves-green btn-flat modal-hover">Delete</a>
                             </div>
