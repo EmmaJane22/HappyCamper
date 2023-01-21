@@ -120,6 +120,13 @@ h4 {
     padding: 10px;
 }
 
+.review-icon{
+    font-size: 2rem;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+
 /*--- Footer ---*/
 .social-media-icon {
     font-size: 2rem;
@@ -140,4 +147,11 @@ footer li {
     background-size: cover;
     background-position: center;
     height: 175px;
+}
+
+.site-image-full {   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
 }

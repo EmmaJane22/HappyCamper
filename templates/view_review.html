@@ -2,83 +2,40 @@
 {% block content %}
 
 <div class="container">
-    <h3 class="center-align">Site Review</h3>
-
     <!-- site review -->
-    <div class="col s12">
-        <div class="card-panel grey lighten-5">
-            <div class="row">
-                <!-- site name -->
-                <div class="center-align">
-                    <h3 class="review-title">{{ site.site_name }}</h3>
-                </div>
+    <div class="col s12 m8">
+        <div class="card-panel">
+            <!-- site image -->      
+            {% if site.image_url != ""  %}
+            <div class="card-image site-image-full" style="background-image:url('{{ site.image_url }}');">
+            {% else %}
+            <div class="card-image site-image-full" style="background-image: url('/static/images/tent-image.jpg');">
+            {% endif %}
             </div>
-            <div class="row">
-                <!-- site image -->
-                <div class="row">
-                    <div class="col s12 l4">
-                        {% if site.image_url != ""  %}
-                            <img src="{{ site.image_url }}" alt="campsite image" class="responsive-img">
-                        {% else %}
-                            <img src="/static/images/tent-image.jpg" alt="campsite image" class="responsive-img">
-                        {% endif %}
-                    </div>
-                    
-                    <div class="col s12 l8">
-                        <!-- site location -->
-                        <div class="row">
-                            <div class="left-align">
-                                <p><i class="fas fa-location-dot prefix small"></i> Site Location: {{ site.location_name }}</p>
-                            </div>
-                        </div>
-
-                        <!-- visit date -->
-                        <div class="row">
-                            <div class="left-align">
-                                <p><i class="fas fa-calendar-alt prefix small"></i> Visit date: {{ site.visit_date }}</p>
-                            </div>
-                        </div>
-                        
-                        <!-- review -->
-                        <div class="row">
-                            <div class="left-align">
-                                <p><i class="fas fa-pen prefix small"></i> Review: {{ site.site_review }}</p>
-                            </div>
-                        </div>
-
-                        <!-- Image URL -->
-                        <div class="row">
-                            <div class="left-align">
-                                <p><i class="fas fa-camera prefix small"></i> Image URL: {{ site.image_url }}</p>
-                            </div>
-                        </div>
-
-                        <!-- members only -->
-                        <div class="row">
-                            <div class="left-align">
-                                <div class="switch">
-                                    <i class="fas fa-people-group prefix small"></i>
-                                    <label for="members_only">
-                                        Members Only?
-                                        {% if site.members_only == "on" %}
-                                            <input disabled type="checkbox" id="members_only" name="members_only" checked>
-                                        {% else %}
-                                            <input disabled type="checkbox" id="members_only" name="members_only">
-                                        {% endif %}
-                                        <span class="lever"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- review created by-->
-                        <div class="row">
-                            <div class="left-align">
-                                <p>Reviewed by: {{ site.created_by }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- site name -->
+            <h3 class="review-title center-align">{{ site.site_name }}</h3>
+            <!-- site location -->
+            <p><i class="fas fa-location-dot review-icon"></i> Site Location: {{ site.location_name }}</p>
+            <p><i class="fas fa-calendar-alt review-icon"></i> Visit date: {{ site.visit_date }}</p>
+            <!-- review -->
+            <p><i class="fas fa-pen review-icon"></i>{{ site.site_review }}</p>
+            <!-- Image URL -->
+            <p><i class="fas fa-camera review-icon"></i> Image URL: {{ site.image_url }}</p>
+            <!-- members only -->
+            <div class="switch">
+                <i class="fas fa-people-group review-icon"></i>
+                <label for="members_only">
+                    Members Only?
+                    {% if site.members_only == "on" %}
+                        <input disabled type="checkbox" id="members_only" name="members_only" checked>
+                    {% else %}
+                        <input disabled type="checkbox" id="members_only" name="members_only">
+                    {% endif %}
+                    <span class="lever"></span>
+                </label>
             </div>
+            <!-- review created by-->
+            <p>Reviewed by: {{ site.created_by }}</p>
                
             <!-- Back button -->
             <div class="row">
@@ -111,7 +68,7 @@
                     {% endif %}
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
 
