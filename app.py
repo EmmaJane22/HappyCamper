@@ -166,6 +166,7 @@ def edit_review(site_id):
             }
             mongo.db.sites.replace_one({"_id": ObjectId(site_id)}, submit)
             flash("Review Successfully Edited")
+            return redirect(url_for("get_sites"))
 
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
     locations = mongo.db.locations.find().sort("location_name", 1)
