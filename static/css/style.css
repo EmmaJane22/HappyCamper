@@ -94,6 +94,11 @@ h4 {
 }
 
 
+.modal-hover:hover {
+    background-color: #37474f;
+    color: #fafafa;
+}
+
 /*--- Footer ---*/
 .social-media-icon {
     font-size: 2rem;

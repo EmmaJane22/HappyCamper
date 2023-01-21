@@ -99,7 +99,11 @@
                             <p>Deleting a review cannot be undone afterwards</p>
                             </div>
                             <div class="modal-footer">
-                            <a href="{{ url_for('delete_review', site_id=site._id) }}" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                <!-- cancel button -->
+                                <a href="{{ url_for('get_sites') }}" class="btn-flat modal-hover">
+                                Cancel</a>
+                                <a href="{{ url_for('delete_review', site_id=site._id) }}" 
+                                class="modal-close waves-effect waves-green btn-flat modal-hover">Delete</a>
                             </div>
                         </div>
 
