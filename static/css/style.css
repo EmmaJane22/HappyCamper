@@ -1,4 +1,4 @@
-/*--- Google Font Import ---*/
+/* -------- Google Font Import  -------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
 
 body {
@@ -50,7 +50,7 @@ h4 {
     padding-right: 20px;
 }
 
-/* --- Hero Image --- */
+/* -------- Hero Image -------- */
 .hero-outer{
     height: 400px;
     width: 100%;
@@ -66,7 +66,7 @@ h4 {
     margin: auto;
 }
 
-/* --- Sites page --- */
+/* -------- Sites page -------- */
 .card-margin {
     margin: 15px;
 }
@@ -127,7 +127,8 @@ h4 {
 }
 
 
-/*--- Footer ---*/
+/* -------- Footer -------- */
+
 .social-media-icon {
     font-size: 2rem;
     color: #fafafa;
@@ -154,4 +155,32 @@ footer li {
     background-size: cover;
     background-position: center;
     height: 250px;
+}
+
+
+/* -------- Media Queries -------- */
+
+/* SmartPhone View - For screen size larger than 600px */
+@media screen and (min-width: 600px) {
+    .search-button div {
+        padding-top: 30px;
+    }
+}
+
+/* X-Small, SmartPhone View - For screen size smaller than 492px */
+@media screen and (max-width: 492px) {
+    .nav-extended a {
+        font-size: 1rem;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
 }
