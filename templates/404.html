@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<!-- 404 message -->
+<div class="row container blue-grey lighten-2">
+    <h4 class="center-align">Oooops! Something seems to be wrong!</h4>
+    <h4 class="center-align">Don't be an un-Happy Camper ...</h4>
+    <a href="{{ url_for('landing_page') }}" class="hover-link-404"><h4 class="center-align">
+        click here to return home!</h4></a>
+</div>
+
+
+{% endblock %}

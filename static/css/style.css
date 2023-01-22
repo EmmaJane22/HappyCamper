@@ -124,6 +124,14 @@ h4 {
     background-color: #0277bd;
 }
 
+.hover-link-404 h4 {
+    color: #fafafa;
+}
+
+.hover-link-404 h4:hover {
+    color: #37474f;
+}
+
 .location-title {
     color: #37474f;
     padding: 10px;
