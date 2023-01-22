@@ -1,6 +1,7 @@
 /* -------- Google Font Import  -------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
 
+/* -------- general CSS -------- */
 body {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
@@ -22,10 +23,6 @@ h3,
 h4 {
     font-family: 'Poppins', sans-serif;
     color: white;
-}
-
-.review-title {
-    color: #37474f;
 }
 
 .text-shadow {
@@ -51,6 +48,7 @@ h4 {
 }
 
 /* -------- Hero Image -------- */
+
 .hero-outer{
     height: 400px;
     width: 100%;
@@ -67,6 +65,7 @@ h4 {
 }
 
 /* -------- Sites page -------- */
+
 .card-margin {
     margin: 15px;
 }
@@ -93,10 +92,18 @@ h4 {
     margin: 15px;
 }
 
-.card-icon i {
-    font-size: xx-large;
+/* -------- titles -------- */
+
+.location-title {
+    color: #37474f;
+    padding: 10px;
 }
 
+.review-title {
+    color: #37474f;
+}
+
+/* -------- hover classes -------- */
 
 .modal-hover:hover {
     background-color: #37474f;
@@ -132,9 +139,10 @@ h4 {
     color: #37474f;
 }
 
-.location-title {
-    color: #37474f;
-    padding: 10px;
+/* -------- icons --------- */
+
+.card-icon i {
+    font-size: xx-large;
 }
 
 .review-icon{
@@ -142,9 +150,6 @@ h4 {
     padding: 10px;
     margin-right: 10px;
 }
-
-
-
 
 /* -------- Footer -------- */
 
@@ -175,7 +180,6 @@ footer li {
     background-position: center;
     height: 250px;
 }
-
 
 /* -------- Media Queries -------- */
 
