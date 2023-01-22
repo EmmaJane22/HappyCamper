@@ -36,13 +36,10 @@
                 <div class="card shadow">
                     <!-- site image -->
                     {% if site.image_url != ""  %}
-                        <div class="card-image site-image" 
-                        style="background-image:url('{{ site.image_url }}');">
+                        <div class="card-image site-image" style="background-image:url('{{ site.image_url }}');"></div>
                     {% else %}
-                        <div class="card-image site-image" 
-                        style="background-image: url('/static/images/tent-image.jpg');">
+                        <div class="card-image site-image" style="background-image: url('/static/images/tent-image.jpg');"></div>
                     {% endif %}
-                    </div>
 
                     <!-- site name -->
                     <div class="center-align site-title">

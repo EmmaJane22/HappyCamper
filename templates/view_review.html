@@ -7,13 +7,10 @@
         <div class="card-panel">
             <!-- site image -->      
             {% if site.image_url != ""  %}
-            <div class="card-image site-image-full" 
-            style="background-image:url('{{ site.image_url }}');">
+                <div class="card-image site-image-full" style="background-image:url('{{ site.image_url }}');"></div>
             {% else %}
-            <div class="card-image site-image-full" 
-            style="background-image: url('/static/images/tent-image.jpg');">
+                <div class="card-image site-image-full" style="background-image: url('/static/images/tent-image.jpg');"></div>
             {% endif %}
-            </div>
             <!-- site name -->
             <h3 class="review-title center-align truncate">{{ site.site_name }}</h3>
             <!-- site location -->
