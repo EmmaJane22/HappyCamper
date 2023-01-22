@@ -10,29 +10,29 @@ View the live project [here.](https://emmajane22.github.io/happycamper/ "View th
 ___
 
 ## Table of Contents
-- [1. User Experience (UX)](#ux)
-    - [1.1 Target Audience](#target-audience)
-    - [1.2 User Stories](#user-stories)
-        - [1.2.1 First Time User Goals](#1-2-1)
-        - [1.2.2 Frequent User Goals](#1-2-2)
-- [2. Features](#features)
-    - [2.1 Sections](#2-1)
-    - [2.2 Wireframes](#2-2)
-    - [2.3 Finished Site](#2-3)
-    - [2.4 Future Features](#2-4)
-- [3. Technologies](#technologies)
-    - [3.1 Languages](#3-1)
-    - [3.2 Frameworks/Libraries/Programs](#3-2)
+- 1. [User Experience (UX)](#ux)
+    - [Target Audience](#target-audience)
+    - [User Stories](#user-stories)
+        - [First Time User Goals](#first-time-user-goals)
+        - [Frequent User Goals](#frequent-user-goals)
+- 2. [Features](#features)
+    - [Sections](#sections)
+    - [Wireframes](#wireframes)
+    - [Finished Site](#finished-site)
+    - [Future Features](#future-features)
+- 3. [Technologies](#technologies)
+    - [Languages](#languages)
+    - [Frameworks/Libraries/Programs](#frameworks-libraries-programs)
 
 ## 1. UX
-### 1.1 Target Audience
-### 1.2 User Stories
-### 1.2.1 First Time User Goals
-### 1.2.2 Frequent User Goals
+### Target Audience
+### User Stories
+### First Time User Goals
+### Frequent User Goals
 ## 2. Features
-### 2.1 Sections
-### 2.2 Wireframes
-### 2.3 Finished Site
+### Sections
+### Wireframes
+### Finished Site
 ## 3. Technologies
-### 3.1 Languages
-### 3.2 Frameworks/Libraries/Programs 
+### Languages
+### Frameworks/Libraries/Programs 
