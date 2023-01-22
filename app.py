@@ -91,12 +91,11 @@ def login():
         if existing_user:
             # check password matches
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect username and/or password")
@@ -162,7 +161,7 @@ def edit_review(site_id):
     """
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
     if ((session["user"].lower() == site["created_by"].lower())
-     or (session["user"] == "admin")):
+            or (session["user"] == "admin")):
         if request.method == "POST":
 
             members_only = "on" if request.form.get("members_only") else "off"
@@ -186,7 +185,7 @@ def edit_review(site_id):
 
 @app.route("/delete_review/<site_id>")
 def delete_review(site_id):
-    """ 
+    """
     Checks if the session user created the review.
     Also checks if the session user is admin.
     Allows user to delete reviews they created.
@@ -195,7 +194,7 @@ def delete_review(site_id):
     """
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
     if ((session["user"].lower() == site["created_by"].lower())
-     or (session["user"] == "admin")):
+            or (session["user"] == "admin")):
         mongo.db.sites.delete_one({"_id": ObjectId(site_id)})
         flash("Review Deleted")
     return redirect(url_for("get_sites"))
@@ -203,7 +202,7 @@ def delete_review(site_id):
 
 @app.route("/get_locations")
 def get_locations():
-    """ 
+    """
     Only renders for admin.
     Navigates to display all locations in the database.
     """
@@ -213,7 +212,7 @@ def get_locations():
 
 @app.route("/add_location", methods=["GET", "POST"])
 def add_location():
-    """ 
+    """
     Only renders for admin.
     Enables admin to add a location to the database.
     """
@@ -229,11 +228,11 @@ def add_location():
 
 
 @app.route("/edit_location/<location_id>", methods=["GET", "POST"])
-def edit_location(location_id): 
-    """ 
+def edit_location(location_id):
+    """
     Only renders for admin.
     Enables admin to append a location in the database.
-    Returns to all locations. 
+    Returns to all locations.
     """
     if request.method == "POST":
         submit = {
@@ -247,13 +246,12 @@ def edit_location(location_id):
     return render_template("edit_location.html", location=location)
 
 
-# Delete locations
 @app.route("/delete_location/<location_id>")
-def delete_location(location_id): 
-    """ 
+def delete_location(location_id):
+    """
     Only renders for admin.
     Enables admin to delete a location in the database.
-    Returns to all locations. 
+    Returns to all locations.
     """
     if (session["user"] == "admin"):
         mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
@@ -261,14 +259,12 @@ def delete_location(location_id):
     return redirect(url_for("get_locations"))
 
 
-# Contact page
 @app.route("/contact")
 def contact():
     """ renders contact page """
     return render_template("contact.html")
 
 
-# 404 page
 @app.errorhandler(404)
 def page_not_found(e):
     """ 404 error handling """
