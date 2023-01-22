@@ -50,8 +50,8 @@ ___
 ### Languages
 ### Frameworks, Libraries and Programs Used
 ## 4. Testing
-### Testing User Stories
-### Code Validation
+A seperate TEST.md file has been created for documenting testing.
+
 ### Accessibility
 ### Tools Testing
 ### Manual Testing
