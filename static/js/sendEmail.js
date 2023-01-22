@@ -1,4 +1,5 @@
 // sendmail() function
+// code taken from emailjs tutorial
 
 function sendMail(contactForm) {
     emailjs.send("service_c23rfuq", "happycamper", {
