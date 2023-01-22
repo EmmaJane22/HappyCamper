@@ -13,10 +13,10 @@
                     </div>
                         
                     <div>
-                        <a href="{{ url_for('edit_location', location_id=location._id) }}" class="btn green accent-4">Edit</a>
+                        <a href="{{ url_for('edit_location', location_id=location._id) }}" class="btn grey-button">Edit</a>
                         
                         <!-- Modal Trigger -->
-                        <button data-target="modal_{{ location._id }}" class="btn red modal-trigger">Delete</button>
+                        <button data-target="modal_{{ location._id }}" class="btn red-button modal-trigger">Delete</button>
                         <!-- Modal Structure -->
                         <div id="modal_{{ location._id }}" class="modal">
                             <div class="modal-content">
@@ -42,7 +42,7 @@
     <!-- Add location button -->
     <div class="row">
         <div class="col s12 center-align">
-            <a href="{{ url_for('add_location') }}" class="btn-large blue-grey">
+            <a href="{{ url_for('add_location') }}" class="btn-large grey-button">
                 Add Location <i class="fas fa-circle-plus right"></i>
             </a>
         </div>
