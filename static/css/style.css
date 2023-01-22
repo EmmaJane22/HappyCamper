@@ -115,6 +115,15 @@ h4 {
     color: #0277bd;
 }
 
+.form-submit-button {
+    background-color: #37474f;
+    color: #fafafa;
+}
+
+.form-submit-button:hover {
+    background-color: #0277bd;
+}
+
 .location-title {
     color: #37474f;
     padding: 10px;
@@ -125,6 +134,8 @@ h4 {
     padding: 10px;
     margin-right: 10px;
 }
+
+
 
 
 /* -------- Footer -------- */
