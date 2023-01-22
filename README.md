@@ -11,8 +11,8 @@ ___
 
 ## Table of Contents
 - [1. User Experience (UX)](#ux)
-    - [1.1 Target Audience](#1-1)
-    - [1.2 User Stories](#1-2)
+    - [1.1 Target Audience](#target-audience)
+    - [1.2 User Stories](#user-stories)
         - [1.2.1 First Time User Goals](#1-2-1)
         - [1.2.2 Frequent User Goals](#1-2-2)
 - [2. Features](#features)
