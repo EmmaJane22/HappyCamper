@@ -10,21 +10,34 @@ View the live project [here.](https://emmajane22.github.io/happycamper/ "View th
 ___
 
 ## Table of Contents
-- 1. [User Experience (UX)](#ux)
+1. [User Experience (UX)](#ux)
     - [Target Audience](#target-audience)
     - [User Stories](#user-stories)
         - [First Time User Goals](#first-time-user-goals)
         - [Frequent User Goals](#frequent-user-goals)
-- 2. [Features](#features)
+2. [Features](#features)
     - [Sections](#sections)
     - [Wireframes](#wireframes)
     - [Finished Site](#finished-site)
     - [Future Features](#future-features)
-- 3. [Technologies](#technologies)
+3. [Technologies](#technologies)
     - [Languages](#languages)
-    - [Frameworks/Libraries/Programs](#frameworks-libraries-programs)
+    - [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
+4. [Testing](#testing)
+    - [Testing User Stories](#testing-user-stories)
+    - [Code Validation](#code-validation)
+    - [Accessibility](#accessibility)
+    - [Tools Testing](#tools-testing)
+    - [Manual Testing](#manual-testing)
+    - [Bugs & Fixes](#bugs-&-fixes)
+5. [Deployment](#deployment)
+    1. [Heroku](#heroku)
+6. [Credits](#credits)
+    1. [Content](#content)
+    2. [Media](#media)
+7. [Acknowledgements](#acknowledgements)
 
-## 1. UX
+## 1. User Experience (UX)
 ### Target Audience
 ### User Stories
 ### First Time User Goals
@@ -35,4 +48,17 @@ ___
 ### Finished Site
 ## 3. Technologies
 ### Languages
-### Frameworks/Libraries/Programs 
+### Frameworks, Libraries and Programs Used
+## 4. Testing
+### Testing User Stories
+### Code Validation
+### Accessibility
+### Tools Testing
+### Manual Testing
+### Bugs & Fixes
+## 5. Deployment
+### Heroku
+## 6. Credits
+### Content
+### Media
+## 7. Acknowledgements
