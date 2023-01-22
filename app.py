@@ -21,44 +21,46 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/landing_page")
 def landing_page():
+    """ Navigates to Home page. """
     sites = mongo.db.sites.find()
     return render_template("index.html", sites=sites)
 
 
 @app.route("/get_sites")
 def get_sites():
+    """ Finds and returns all site reviews. """
     sites = list(mongo.db.sites.find())
     return render_template("sites.html", sites=sites)
 
 
-# view review
 @app.route("/view_review/<site_id>")
 def view_review(site_id):
+    """ Navigates to display the review of the selected site. """
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
-
     return render_template("view_review.html", site=site)
 
 
-# search
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """ Retrieves search word and finds matching sites in database. """
     query = request.form.get("query")
     sites = list(mongo.db.sites.find({"$text": {"$search": query}}))
     return render_template("sites.html", sites=sites)
 
 
-# register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if username already exists in database
+        """ Checks if the username already exists in database. """
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+        """ Returns flash message if user exists."""
         if existing_user:
             flash("Username unavailable. Please try a different username.")
             return redirect(url_for("register"))
 
+        """ Registers if user does not exist."""
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
@@ -67,22 +69,25 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into session cookie
+        """ Puts the new user into session cookie."""
         session["user"] = request.form.get("username").lower()
         flash("Sign up successful!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
-# login
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Checks if username exists in database.
+    Checks password hash matches.
+    Allows access if they both match.
+    """
     if request.method == "POST":
         # check if username already exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-        # if user exists
         if existing_user:
             # check password matches
             if check_password_hash(
@@ -105,7 +110,6 @@ def login():
     return render_template("login.html")
 
 
-# profile page
 @app.route("/profile/<username>", methods=["GET"])
 def profile(username):
     """ Finds and returns reviews added by the session user """
@@ -115,7 +119,6 @@ def profile(username):
         "profile.html", username=username, user_sites=user_sites, sites=sites)
 
 
-# log out function
 @app.route("/logout")
 def logout():
     """ remove session cookies """
@@ -124,9 +127,12 @@ def logout():
     return redirect(url_for("landing_page"))
 
 
-# add review function
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
+    """
+    Retrieves user input from form.
+    Appends the database.
+    """
     if request.method == "POST":
         members_only = "on" if request.form.get("members_only") else "off"
         review = {
@@ -146,9 +152,14 @@ def add_review():
     return render_template("add_review.html", locations=locations)
 
 
-# edit button functionality
 @app.route("/edit_review/<site_id>", methods=["GET", "POST"])
 def edit_review(site_id):
+    """
+    Checks if the session user created the review.
+    Also checks if the session user is admin.
+    Retrieves current data in database.
+    Appends database with new data.
+    """
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
     if ((session["user"].lower() == site["created_by"].lower())
      or (session["user"] == "admin")):
@@ -173,9 +184,15 @@ def edit_review(site_id):
     return render_template("edit_review.html", site=site, locations=locations)
 
 
-# Delete review button functionality
 @app.route("/delete_review/<site_id>")
 def delete_review(site_id):
+    """ 
+    Checks if the session user created the review.
+    Also checks if the session user is admin.
+    Allows user to delete reviews they created.
+    Allows admin to delete any review.
+    Navigates back to all sites.
+    """
     site = mongo.db.sites.find_one({"_id": ObjectId(site_id)})
     if ((session["user"].lower() == site["created_by"].lower())
      or (session["user"] == "admin")):
@@ -184,16 +201,22 @@ def delete_review(site_id):
     return redirect(url_for("get_sites"))
 
 
-# Manage Locations
 @app.route("/get_locations")
 def get_locations():
+    """ 
+    Only renders for admin.
+    Navigates to display all locations in the database.
+    """
     locations = list(mongo.db.locations.find().sort("location_name", 1))
     return render_template("locations.html", locations=locations)
 
 
-# Add Locations
 @app.route("/add_location", methods=["GET", "POST"])
 def add_location():
+    """ 
+    Only renders for admin.
+    Enables admin to add a location to the database.
+    """
     if request.method == "POST":
         location = {
             "location_name": request.form.get("location_name")
@@ -205,9 +228,13 @@ def add_location():
     return render_template("add_location.html")
 
 
-# Edit locations
 @app.route("/edit_location/<location_id>", methods=["GET", "POST"])
-def edit_location(location_id):
+def edit_location(location_id): 
+    """ 
+    Only renders for admin.
+    Enables admin to append a location in the database.
+    Returns to all locations. 
+    """
     if request.method == "POST":
         submit = {
             "location_name": request.form.get("location_name")
@@ -223,6 +250,11 @@ def edit_location(location_id):
 # Delete locations
 @app.route("/delete_location/<location_id>")
 def delete_location(location_id): 
+    """ 
+    Only renders for admin.
+    Enables admin to delete a location in the database.
+    Returns to all locations. 
+    """
     if (session["user"] == "admin"):
         mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
         flash("Location deleted")
@@ -239,6 +271,7 @@ def contact():
 # 404 page
 @app.errorhandler(404)
 def page_not_found(e):
+    """ 404 error handling """
     return render_template('404.html'), 404
 
 
