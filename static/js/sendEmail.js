@@ -1,4 +1,5 @@
-/*-------- sendmail() function --------*/
+// sendmail() function
+
 function sendMail(contactForm) {
     emailjs.send("service_c23rfuq", "happycamper", {
         "from_name": contactForm.name.value,
