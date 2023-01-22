@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" type="text/css">
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Email JS -->
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("ibSaTyjjawnWKAFxA");
+        })();
+    </script>
+    {% block styles %}
+    {% endblock %}
+    <title>Happy Camper</title>
+</head>
+<body>
+
+    <header>
+        <!--Materialize Top Nav Bar-->
+        <nav class="nav-extended">
+            <div class="nav-wrapper text-shadow blue-grey lighten-2">
+              <a href="{{ url_for('landing_page') }}" class="brand-logo">Happy Camper</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fa-solid fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('landing_page') }}">Home</a></li>
+                <li><a href="{{ url_for('get_sites') }}">Find Campsite</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                {% if session.user %}
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li><a href="{{ url_for('add_review') }}">Add Review</a></li>
+                    {% if session.user|lower == "admin"|lower %}
+                        <li><a href="{{ url_for('get_locations') }}">Manage Locations</a></li>
+                    {% endif %}
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+                {% endif %}
+              </ul>
+            </div>
+        </nav>
+
+        <!--Materialize Mobile Collapse Button Nav Bar-->
+        <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align blue-grey-text text-darken-3">Happy Camper</h4></li>
+            <li><a href="{{ url_for('landing_page') }}">Home</a></li>
+            <li><a href="{{ url_for('get_sites') }}">Find Campsite</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            {% if session.user %}
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="{{ url_for('add_review') }}">Add Review</a></li>
+                {% if session.user|lower == "admin"|lower %}
+                        <li><a href="{{ url_for('get_locations') }}">Manage Locations</a></li>
+                    {% endif %}
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </header>
+    
+    <main>
+        <div class="row container blue-grey lighten-2">
+            <h3 class="center-align">Oooohs... something's gone wrong!</h3> 
+            <h4 class="center-align"><a href="{{ url_for('get_sites') }}">Click here</a> to return to Happy Camper</h4>
+        </div>
+    </main>
+
+    <!-- Footer section-->
+    <footer class="page-footer blue-grey darken-1 center-align">
+        <div class="container">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com" class="social-media-hover" target="_blank">
+                        <i class="social-media-icon fa-brands fa-facebook" aria-hidden="true"></i>
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com" class="social-media-hover" target="_blank">
+                        <i class="social-media-icon fa-brands fa-twitter" aria-hidden="true"></i>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" class="social-media-hover" target="_blank">
+                        <i class="social-media-icon fa-brands fa-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                © 2023 Emma Scott
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- EmailJS script -->
+    <script src="static/js/sendEmail.js"></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
