@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-campground prefix"></i>
-                    <input id="site_name" name="site_name" minlength="5"  maxlength="50" 
+                    <input id="site_name" name="site_name" minlength="5" maxlength="50" 
                     type="text" class="validate" required>
                     <label for="site_name">Site Name</label>
                 </div>
@@ -24,7 +24,8 @@
                         <select id="location_name" name="location_name" class="validate" required>
                         <option value="" disabled selected>Choose location</option>
                         {% for location in locations %}
-                            <option value="{{ location.location_name }}">{{ location.location_name }}</option>
+                            <option value="{{ location.location_name }}">
+                                {{ location.location_name }}</option>
                         {% endfor %}
                         </select>
                         <label for="location_name">Location</label>
@@ -51,7 +52,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-camera prefix"></i>
-                    <input id="image_url" name="image_url" minlength="5"  maxlength="100" 
+                    <input id="image_url" name="image_url" minlength="5" maxlength="100" 
                     type="text" class="validate">
                     <label for="image_url">Image URL</label>
                 </div>

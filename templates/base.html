@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Email JS -->
     <script type="text/javascript">
         (function() {
             emailjs.init("ibSaTyjjawnWKAFxA");
@@ -81,13 +82,13 @@
         {% endwith %}
     </section>
 
-<!-- Main content block -->
+    <!-- Main content block -->
    <main>
         {% block content %}
         {% endblock %}
     </main>
 
-<!-- Footer section-->
+    <!-- Footer section-->
     <footer class="page-footer blue-grey darken-1 center-align">
         <div class="container">
             <ul>
@@ -119,7 +120,7 @@
         </div>
     </footer>
 
-<!-- Scripts -->
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

@@ -7,29 +7,37 @@
         <div class="card-panel">
             <!-- site image -->      
             {% if site.image_url != ""  %}
-            <div class="card-image site-image-full" style="background-image:url('{{ site.image_url }}');">
+            <div class="card-image site-image-full" 
+            style="background-image:url('{{ site.image_url }}');">
             {% else %}
-            <div class="card-image site-image-full" style="background-image: url('/static/images/tent-image.jpg');">
+            <div class="card-image site-image-full" 
+            style="background-image: url('/static/images/tent-image.jpg');">
             {% endif %}
             </div>
             <!-- site name -->
             <h3 class="review-title center-align truncate">{{ site.site_name }}</h3>
             <!-- site location -->
-            <p class="flow-text"><i class="fas fa-location-dot review-icon"></i> Site Location: {{ site.location_name }}</p>
-            <p class="flow-text"><i class="fas fa-calendar-alt review-icon"></i> Visit date: {{ site.visit_date }}</p>
+            <p class="flow-text"><i class="fas fa-location-dot review-icon"></i> 
+                Site Location: {{ site.location_name }}</p>
+            <p class="flow-text"><i class="fas fa-calendar-alt review-icon"></i> 
+                Visit date: {{ site.visit_date }}</p>
             <!-- review -->
-            <p class="flow-text"><i class="fas fa-pen review-icon"></i>{{ site.site_review }}</p>
+            <p class="flow-text"><i class="fas fa-pen review-icon"></i>
+                {{ site.site_review }}</p>
             <!-- Image URL -->
-            <p class="truncate"><i class="fas fa-camera review-icon"></i> Image URL: {{ site.image_url }}</p>
+            <p class="truncate"><i class="fas fa-camera review-icon"></i> 
+                Image URL: {{ site.image_url }}</p>
             <!-- members only -->
             <div class="switch">
                 <i class="fas fa-people-group review-icon"></i>
                 <label for="members_only">
                     Members Only?
                     {% if site.members_only == "on" %}
-                        <input disabled type="checkbox" id="members_only" name="members_only" checked>
+                        <input disabled type="checkbox" id="members_only" 
+                        name="members_only" checked>
                     {% else %}
-                        <input disabled type="checkbox" id="members_only" name="members_only">
+                        <input disabled type="checkbox" id="members_only" 
+                        name="members_only">
                     {% endif %}
                     <span class="lever"></span>
                 </label>
@@ -44,13 +52,16 @@
                     <a href="{{ url_for('get_sites') }}" class="btn-small green">
                     Back <i class="fas fa-rotate-left right"></i>
                     </a>
-                    {% if ((session.user|lower == site.created_by|lower) or (session.user == "admin")) %}
+                    {% if ((session.user|lower == site.created_by|lower) or 
+                        (session.user == "admin")) %}
                         <!-- Modal Trigger -->
-                        <button data-target="modal1" class="btn-small red modal-trigger">Delete</button>
+                        <button data-target="modal1" class="btn-small red modal-trigger">
+                            Delete</button>
                         <!-- Modal Structure -->
                         <div id="modal1" class="modal">
                             <div class="modal-content">
-                            <h5><i class="fas fa-triangle-exclamation small"></i> Are you sure you want to delete this review?
+                            <h5><i class="fas fa-triangle-exclamation small"></i>
+                                 Are you sure you want to delete this review?
                                 <i class="fas fa-triangle-exclamation small"></i></h5>
                             <p>Deleting a review cannot be undone afterwards</p>
                             </div>
@@ -60,11 +71,13 @@
                                 Cancel</a>
                                 <!-- delete button -->
                                 <a href="{{ url_for('delete_review', site_id=site._id) }}" 
-                                class="modal-close waves-effect waves-green btn-flat modal-hover">Delete</a>
+                                class="modal-close waves-effect waves-green btn-flat modal-hover">
+                                Delete</a>
                             </div>
                         </div>
 
-                        <a href="{{ url_for('edit_review', site_id=site._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                        <a href="{{ url_for('edit_review', site_id=site._id) }}" 
+                        class="btn-small light-blue lighten-1">Edit</a>
                     {% endif %}
                 </div>
             </div>
