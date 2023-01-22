@@ -13,7 +13,7 @@
     - [Manual Testing](#manual-testing)
     - [Bugs & Fixes](#bugs-&-fixes)
 
-### Code Validation
+## Code Validation
 
 ### W3C Markup Validator
 
@@ -36,6 +36,20 @@ This showed two warnings linked to the Materialize script on script.js
 
 ![jshint error image](/documentation/jshint_error.jpg)
 
-It also showed two erros with two variables being used to call functions in sendEmail.js
+It also showed two errors with two variables being used to call functions in sendEmail.js
 
 ![jshint email error image](/documentation/sendEmail_error.jpg)
+
+### PEP8 Validation
+PEP8Ci was used to validate the python code used in the app.py file. No errors were linted.
+
+![PEP8CI image](/documentation/pep8_app_clear.jpg)
+
+## Lighthouse
+The site has been run through the Lighthouse test on Google Developer Tools and achieved the following results:
+
+The first test showed that there wasn't sufficient contrast between the text colour and the background colour so this was changed to the darker colour of #263238
+
+It also identified that the footer text was also not high enough contrast so the styling on that was increased to a h6.
+
+ 

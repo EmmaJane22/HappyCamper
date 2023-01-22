@@ -23,13 +23,7 @@ ___
 3. [Technologies](#technologies)
     - [Languages](#languages)
     - [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
-4. [Testing](#testing)
-    - [Testing User Stories](#testing-user-stories)
-    - [Code Validation](#code-validation)
-    - [Accessibility](#accessibility)
-    - [Tools Testing](#tools-testing)
-    - [Manual Testing](#manual-testing)
-    - [Bugs & Fixes](#bugs-&-fixes)
+4. [TEST.md](TEST.md)
 5. [Deployment](#deployment)
     1. [Heroku](#heroku)
 6. [Credits](#credits)
@@ -49,13 +43,11 @@ ___
 ## 3. Technologies
 ### Languages
 ### Frameworks, Libraries and Programs Used
-## 4. Testing
-A seperate TEST.md file has been created for documenting testing.
 
-### Accessibility
-### Tools Testing
-### Manual Testing
-### Bugs & Fixes
+## 4. Testing
+
+A seperate [TEST.md](TEST.md) file has been created for the documentation of testing.
+
 ## 5. Deployment
 ### Heroku
 ## 6. Credits

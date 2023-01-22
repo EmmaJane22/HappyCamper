@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container">
-    <h3 class="center-align">
+    <h3 class="center-align review-title">
         {{username}}'s Campsites
     </h3>
 
@@ -42,13 +42,13 @@
                 <!-- buttons -->
                 <div class="center-align">
                     <a href="{{ url_for('view_review', site_id=site._id) }}" 
-                    class="btn-small blue-grey">View</a>
+                    class="btn-small grey-button ">View</a>
                     {% if ((session.user|lower == site.created_by|lower) or 
                         (session.user == "admin")) %}
                         <a href="{{ url_for('delete_review', site_id=site._id) }}" 
-                        class="btn-small red">Delete</a>
+                        class="btn-small red-button">Delete</a>
                         <a href="{{ url_for('edit_review', site_id=site._id) }}" 
-                        class="btn-small light-blue lighten-1">Edit</a>
+                        class="btn-small grey-button">Edit</a>
                     {% endif %}
                 </div>
             </div>

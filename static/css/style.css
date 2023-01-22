@@ -17,6 +17,13 @@ main {
     flex: 1 0 auto;
 }
 
+p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: black;
+    font-size: 1.2rem;
+}
+
 h1,
 h2,
 h3,
@@ -32,7 +39,7 @@ h4 {
 .flashes h4 {
     line-height: 2;
     background-color: #fafafa;
-    color: #37474f;
+    color: #263238;
     text-align: center;
 }
 
@@ -85,7 +92,7 @@ h4 {
 .site-title {
     max-height: 2em;
     overflow: clip;
-    color: #37474f;
+    color: #263238;
 }
 
 .card-panel {
@@ -95,27 +102,27 @@ h4 {
 /* -------- titles -------- */
 
 .location-title {
-    color: #37474f;
+    color: #263238;
     padding: 10px;
 }
 
 .review-title {
-    color: #37474f;
+    color: #263238;
 }
 
 /* -------- hover classes -------- */
 
 .modal-hover:hover {
-    background-color: #37474f;
+    background-color: ##263238;
     color: #fafafa;
 }
 
 .modal-hover {
-    color: #37474f;
+    color: #263238;
 }
 
 .hover-link h4 {
-    color: #37474f;
+    color: #263238;
 }
 
 .hover-link h4:hover {
@@ -123,7 +130,7 @@ h4 {
 }
 
 .form-submit-button {
-    background-color: #37474f;
+    background-color: #263238;
     color: #fafafa;
 }
 
@@ -136,7 +143,19 @@ h4 {
 }
 
 .hover-link-404 h4:hover {
-    color: #37474f;
+    color: #263238;
+}
+
+/* -------- Buttons --------*/
+
+.grey-button {
+    background-color: #263238;
+}
+
+.red-button {
+    background-color: #bdbdbd;
+    color: black;
+    font-weight: bold;
 }
 
 /* -------- icons --------- */
@@ -153,10 +172,14 @@ h4 {
 
 /* -------- Footer -------- */
 
+.page-footer {
+    background-color: #37474f;
+}
+
 .social-media-icon {
     font-size: 2rem;
     color: #fafafa;
-    padding: 20px;
+    padding: 10px;
 }
 
 .social-media-hover i:hover {
