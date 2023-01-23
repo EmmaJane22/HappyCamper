@@ -28,7 +28,7 @@
                                 selected>{{ location.location_name }}</option>
                             {% else %}
                                 <option value="{{ location.location_name }}">
-                                    {{ location.location_name }}</option>
+                                    {{- location.location_name -}}</option>
                             {% endif %}
                         {% endfor %}
                         </select>
