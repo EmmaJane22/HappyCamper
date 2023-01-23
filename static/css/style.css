@@ -56,7 +56,7 @@ h4 {
 
 /* -------- Hero Image -------- */
 
-.hero-outer{
+.hero-outer {
     height: 400px;
     width: 100%;
     overflow: hidden;
@@ -139,11 +139,11 @@ h4 {
 }
 
 .hover-link-404 h4 {
-    color: #fafafa;
+    color: #263238;
 }
 
 .hover-link-404 h4:hover {
-    color: #263238;
+    color: #fafafa;
 }
 
 /* -------- Buttons --------*/
@@ -152,7 +152,7 @@ h4 {
     background-color: #263238;
 }
 
-.red-button {
+.delete-button {
     background-color: #bdbdbd;
     color: black;
     font-weight: bold;
