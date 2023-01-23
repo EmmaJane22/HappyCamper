@@ -24,11 +24,13 @@ These checks showed three pages with a missing closing div tag where I had copie
 
 The validator also highlighted missing head elements, illegal characters, missing lang attributes and no-space characters however these are due to use Jinga templating (see example below).
 
-![W3C error image](/documentation/index_error.jpg)
+![W3C HTML image](/documentation/index_error.jpg)
 
 ### CSS Validator
 
-All CSS code was checked with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) using the 'direct input' method.
+All CSS code was checked with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) using the 'direct input' method. No errors found.
+
+![W3C CSS image](/documentation/css.jpg)
 
 ### JSHint Validator
 
@@ -48,8 +50,9 @@ PEP8Ci was used to validate the python code used in the app.py file. No errors w
 ## Lighthouse
 The site has been run through the Lighthouse test on Google Developer Tools and achieved the following results:
 
+
 The first test showed that there wasn't sufficient contrast between the text colour and the background colour so this was changed to the darker colour of #263238
 
-It also identified that the footer text was also not high enough contrast so the styling on that was increased to a h6.
+It also identified that the footer text was also not high enough contrast so the styling on that was increased to a h6 so that it was more legible.
 
  
