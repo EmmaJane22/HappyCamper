@@ -161,15 +161,18 @@ Admin users can also see a link for 'Manage Locations' once logged in.
 
 ![nav admin logged in](/documentation/site_images/nav_admin.jpg)
 
-The nav bar is responsive and resizes when viewed on mobile devices as a side nav bar rather thana top one.
+The nav bar is responsive and resizes when viewed on mobile devices as a side nav bar rather than a top one.
 
 Logged out
+
 ![side nav logged out](/documentation/site_images/sidenav_loggedout.jpg)
 
 Logged in
+
 ![side nav logged in](/documentation/site_images/sidenav_loggedin.jpg)
 
 Admin
+
 ![side nav admin](/documentation/site_images/sidenav_admin.jpg)
 
 #### Footer
