@@ -21,9 +21,9 @@ ___
         - [Colour Scheme](#colour-scheme)
         - [Typography](#typography)
 2. [Features](#features)
+    - [Design](#design)
     - [Wireframes](#wireframes)
-    - [Sections](#sections)
-    - [Finished Site](#finished-site)
+    - [Features](#features)
     - [Future Features](#future-features)
 3. [Technologies](#technologies)
     - [Languages](#languages)
@@ -103,13 +103,18 @@ ___
 
 ### Design
 
+Site Map 
+
 ![site map](/documentation/sitemap.jpg)
+
+Database
 
 The tables for the data have been created on MongoDB which is a non-relational database.
 
 ![flow chart](/documentation/flowchart.jpg)
 
 ### Wireframes
+
 [Balsamiq](https://balsamiq.com/) was used to create wireframes of the design of the site for mobile phones, tablets and dekstop devices.
 
 Home Page
@@ -140,8 +145,35 @@ Manage locations page
 
 ![manage locations](/documentation/wireframes/7locations.png)
 
-### Sections
-### Finished Site
+### Features
+#### Hero Image
+#### Nav Bar
+The nav bar is displayed on all pages and allows users to easily navigate the site. The nav bar has a brand name on the left to increase brand identity throughout the site. 
+Unregistered/Logged out users will only be able to see links for 'Home', 'Find campsite', 'Sign up', 'Log in' and 'Contact us'.
+
+![nav logged out](/documentation/site_images/nav_loggedout.jpg)
+
+Once logged in, users will also see nav links for 'Add Review' and will no longer see 'Log In' or 'Register' links.
+
+![nav logged in](/documentation/site_images/nav_loggedin.jpg)
+
+Admin users can also see a link for 'Manage Locations' once logged in. 
+
+![nav admin logged in](/documentation/site_images/nav_admin.jpg)
+
+The nav bar is responsive and resizes when viewed on mobile devices as a side nav bar rather thana top one.
+
+Logged out
+![side nav logged out](/documentation/site_images/sidenav_loggedout.jpg)
+
+Logged in
+![side nav logged in](/documentation/site_images/sidenav_loggedin.jpg)
+
+Admin
+![side nav admin](/documentation/site_images/sidenav_admin.jpg)
+
+#### Footer
+
 ### Future Features
 
 [Back to top](#table-of-contents)
