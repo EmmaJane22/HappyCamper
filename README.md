@@ -15,6 +15,7 @@ ___
 
 1. [User Experience (UX)](#ux)
     - [User Stories](#user-stories)
+        - [Target Audience](#target-audience)
         - [First Time User Goals](#first-time-user-goals)
         - [Frequent User Goals](#frequent-user-goals)
         - [Colour Scheme](#colour-scheme)
@@ -40,6 +41,10 @@ ___
 ## 1. User Experience (UX)
 
 ## User Stories
+
+### Target Audience
+
+The target audience for Happy Camper is anyone who likes camping and wants to share their experience of a campsite. It is also for people who want to find out what other people think of a campsite. Campsite owners might also use it to discover what visitors think of their site.
 
 ### First Time User Goals
 
@@ -89,12 +94,20 @@ As an administrator of the site, I want to be able to:
 
 
 ### Typography
-
+The main font used for the Nav Bar heading is Poppins and the rest of the site uses Raleway. Both have Sans-Serif as a fall-back font and are easy to read.
 
 [Back to top](#table-of-contents)
 ___
 
 ## 2. Features
+
+### Design
+
+![site map](/documentation/sitemap.jpg)
+
+The tables for the data have been created on MongoDB which is a non-relational database.
+
+![flow chart](/documentation/flowchart.jpg)
 
 ### Wireframes
 [Balsamiq](https://balsamiq.com/) was used to create wireframes of the design of the site for mobile phones, tablets and dekstop devices.
