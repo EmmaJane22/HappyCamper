@@ -115,7 +115,7 @@ The tables for the data have been created on MongoDB which is a non-relational d
 
 ### Wireframes
 
-[Balsamiq](https://balsamiq.com/) was used to create wireframes of the design of the site for mobile phones, tablets and dekstop devices.
+[Balsamiq](https://balsamiq.com/) was used to create wireframes of the design of the site for mobile phones, tablets and desktop devices.
 
 Home Page
 
@@ -148,7 +148,7 @@ Manage locations page
 ### Features
 
 #### Nav Bar
-The nav bar is displayed on all pages and allows users to easily navigate the site. The nav bar has a brand name on the left to increase brand identity throughout the site. The brand name links back to the main page for ease of navigation. The links change colour when hovered over to signal to the user which link they have the mouse over. 
+The nav bar is displayed on all pages and allows users to easily navigate the site. The nav bar has a brand name on the left to increase brand identity throughout the site. The brand name links back to the main page for ease of navigation. The links change colour when hovered over to signal to the user which hyperlink they have the mouse over. 
 The nav bar presents differently for different user. Unregistered/Logged out users will only be able to see links for 'Home', 'Find campsite', 'Sign up', 'Log in' and 'Contact us'. 
 
 ![nav logged out](/documentation/site_images/nav_loggedout.jpg)
@@ -189,6 +189,8 @@ Flash messages appear to provide the user with feedback on actions for example t
 #### Modals
 Modals have been used on pages that involve the ability to delete something, for example on Manage Locations. The button on the page triggers the modal to open, and the delete functionality only works through the delete button on the modal. This is to reduce instances where people accidentally delete something and provides better user experience.
 
+___
+
 ### Pages
 
 The website consists of twelve pages that run from a base page:
@@ -212,7 +214,7 @@ All users can open the following pages:
 
 #### Home Page
 
-The home page contains a search bar for ease of use, to allow users to begin searching for campsite reviews immediately. It also contains three card panels which convey the main features of the site - to search for a site review, submit a site review and (in future) save their favourite site reviews. It has deliberately been kept minimilistic to enable users to easily navigate the site.
+The home page contains a search bar for ease of use, to allow users to begin searching for campsite reviews immediately. It also contains three card panels which convey the main features of the site - to search for a site review, submit a site review and (in future) save their favourite site reviews. It has deliberately been kept minimalistic to enable users to easily navigate the site.
 
 ![home](/documentation/site_images/home_page.jpg)
 
@@ -224,13 +226,13 @@ The Find Campsite page also contains a search bar, again for ease of use. Site r
 
 #### Campsite Review Page
 
-This page enables users to read the full campsite review. It includes the image again and includes the values of the keys - site name, site location, site review, image URL, members only (toggle), date visited and reviewed by. The review panel includes a back button which takes them back to the Find Campsite page, again for ease of navigation around the website, without the need to use the browswer's back button.
+This page enables users to read the full campsite review. It includes the image again and includes the values of the keys - site name, site location, site review, image URL, members only (toggle), date visited and reviewed by. The review panel includes a back button which takes them back to the Find Campsite page, again for ease of navigation around the website, without the need to use the browser's back button.
 
 ![review](/documentation/site_images/review.jpg)
 
 #### Contact Page
 
-Any user can acces the contact page and complete the contact form. This was deliberately chosen so that anyone experiencing a problem or with a question could contact the site administration. The form connects to the EmailJS API to enable the form contents to be emailed to the site admin. An auto-response has been set up to reply to the email address on the form to acknowledge the user's query. The autoresponse includes the user's name in the message.
+Any user can access the contact page and complete the contact form. This was deliberately chosen so that anyone experiencing a problem or with a question could contact the site administration. The form connects to the EmailJS API to enable the form contents to be emailed to the site admin. An auto-response has been set up to reply to the email address on the form to acknowledge the user's query. The auto-response includes the user's name in the message.
 
 ![contact](/documentation/site_images/contact.jpg)
 
@@ -263,7 +265,7 @@ This page displays the current site review using the site_id value to populate t
 
 #### Add Review Page
 
-Signed in users can complete the form to submit a new campsite review. The form includes the keys of site name, site location, site review, image URL, members only (toggle) and and visit date which is a Materialize date picker for ease of entry and uniformity of values in the database. All values are required exampt for image URL, as previously mentioned. The form can then be submitted and stored in the database, or the Cancel button returns the user to the Find Campsite page. This all enables ease of navigation and good user experience.
+Signed in users can complete the form to submit a new campsite review. The form includes the keys of site name, site location, site review, image URL, members only (toggle) and visit date which is a Materialize date picker for ease of entry and uniformity of values in the database. All values are required except for image URL, as previously mentioned. The form can then be submitted and stored in the database, or the Cancel button returns the user to the Find Campsite page. This all enables ease of navigation and good user experience.
 
 ![add review](/documentation/site_images/add_review.jpg)
 
@@ -284,30 +286,32 @@ The locations in the database are displayed on Materialize card panels that are 
 
 #### Edit Locations Page
 
-The edit page contains a very simple form which is prepopulated with the location that the user has selected to edit. Upon clicking the edit location button the user is redirected back to the Manage Locations page. A cancel button is also provided if the user changes their mind to aviod them needing to user the browser's back button.
+The edit page contains a very simple form which is prepopulated with the location that the user has selected to edit. Upon clicking the edit location button the user is redirected back to the Manage Locations page. A cancel button is also provided if the user changes their mind to avoid them needing to user the browser's back button.
 
 ![edit locations](/documentation/site_images/edit_location.jpg)
 
 #### Add Locations Page
 
-Again, this page contains a very simple form. The user is required to enter a location name that is longer than three letters. Upon clicking the Add location button the user is redirected back to the Manage Locations page. Again, the cancel button is also provided if the user changes their mind to aviod them needing to user the browser's back button.
+Again, this page contains a very simple form. The user is required to enter a location name that is longer than three letters. Upon clicking the Add location button the user is redirected back to the Manage Locations page. Again, the cancel button is also provided if the user changes their mind to avoid them needing to user the browser's back button.
 
 ![add locations](/documentation/site_images/add_location.jpg)
 
 #### 404 Error Page
 
-A custom 404 error page has been included to allow users to navigate back to the home page easily as it contains a link which changes colour when hovered over. This enables users to easily naviate the site and gives immediate user feedback.
+A custom 404 error page has been included to allow users to navigate back to the home page easily as it contains a link which changes colour when hovered over. This enables users to easily navigate the site and gives immediate user feedback.
 
 ![404](/documentation/site_images/404.jpg)
+
+___
 
 ### Future Features
 Ideas for future implementation include:
 
  - the functionality for a user to save a site as their 'favourite' and have it appear on their profile page.
- - the ability for users to change their password and a function to accomodate forgotten passwords.
+ - the ability for users to change their password and a function to accommodate forgotten passwords.
  - the option for a user to delete their account.
  - inclusion of an API for users to view the campsite location such as Google Maps.
- - the option to select campsite features to broaden the search parameters, for example check boxes for electric hookup, kids play area, toilet block etc so users could then filter the sites by these values. 
+ - the option to select campsite features to broaden the search parameters, for example check boxes for electric hook-up, kids play area, toilet block etc so users could then filter the sites by these values. 
 
 
 [Back to top](#table-of-contents)
@@ -328,6 +332,7 @@ HTML, CSS, JavaScript & Python
 * PyMongo - Python-Mongo library. 
 * Pip - for installing Python packages.
 * Jinga - to generate markup as well as source code.
+* Werzberg - for secure password hashing.
 * Balsamiq - to produce wireframes.
 * Git - for version control.
 * Github - to save files for the website.
@@ -341,8 +346,10 @@ ___
 
 ## 4. Testing
 
-A seperate [TEST.md](TEST.md) file has been created for the documentation of testing.
+A separate [TEST.md](TEST.md) file has been created for the documentation of testing.
+
 [Back to top](#table-of-contents)
+
 ___
 
 ## 5. Deployment
@@ -353,7 +360,7 @@ To deploy the Happy Camper website to Heroku the following steps were taken:
 2.	Create a requirements.txt file using the command pip3 freeze —local > requirements.txt
 3.	Create then a Heroku account and then log in.
 4.	Click the create new app button. Provide a name for the app (must be unique within Heroku) and choose the closest region to your location (namely Europe).
-5.	Set up deployment from GitHub repository ( Deploy > Deployment method > GitHub) - at this stage automatic deployment from GitHub repository should not be selected.
+5.	Set up deployment from GitHub repository (Deploy > Deployment method > GitHub) - at this stage automatic deployment from GitHub repository should not be selected.
 6.	Choose the appropriate GitHub repository from the options.
 7.	Select the Reveal Config Vars option and set the config vars as follows:
 
@@ -377,7 +384,7 @@ It may be necessary to clone the repository from GitHub to your local computer. 
 4.	Open Git Bash and change the working directory to the location where you wish the cloned repo to be stored.
 5.	Use the git clone command and paste in the information copied in step 3 and Press Enter to create a local clone.
 6.	If you wish to clone the repo to GitHub Desktop repeat steps 1 & 2 and from there select the "Open with GitHub Desktop" option.
-7.	Follow the on screen prompts from within GitHub Desktop (this option required GitHub Desktop to be installed to be successful).
+7.	Follow the on-screen prompts from within GitHub Desktop (this option required GitHub Desktop to be installed to be successful).
 
 (source: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
@@ -387,9 +394,36 @@ ___
 ## 6. Credits
 ### Content
 
+* emailJS tutorial
+https://www.emailjs.com/docs/sdk/send-form/
+https://www.emailjs.com/docs/user-guide/auto-reply/
+
+
+* Materializecss
+https://materializecss.com/text-inputs.html
+
+
+* How to create a 404 page:
+https://stackoverflow.com/questions/29516093/how-to-redirect-to-a-external-404-page-python-flask
+
+
+* Code Institute's Task Manager mini-project tutorial 
+https://codeinstitute.net/
+
+
 ### Media
-[websitemockupgenerator](https://websitemockupgenerator.com/) for creating the multi-device mockup.  
+
+[websitemockupgenerator](https://websitemockupgenerator.com/) for creating the multi-device mockup.
+
+https://www.shutterstock.com/image-photo/camping-green-tent-forest-near-lake-657542155 tent image
+
+Photo by Xue Guangjian: https://www.pexels.com/photo/photo-of-pitched-dome-tents-overlooking-mountain-ranges-1687845/ hero image
+
 ### Acknowledgements
+
+* Thank you to my mentor, Marcel, for helpful feedback, industry insights and recommended tools.
+* Thank you to my friends and family for frequent testing and interrogation of their opinions.
+* Thank you to the tutors and staff at Code Institute for their support.
 
 [Back to top](#table-of-contents)
 ___
