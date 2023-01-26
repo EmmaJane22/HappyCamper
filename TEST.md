@@ -56,10 +56,10 @@ PEP8Ci was used to validate the python code used in the app.py file. No errors w
 
 The site has been run through the Lighthouse test on Google Developer Tools and achieved the following results:
 
-Desktop - Home Page
+Desktop - Home Page <br>
 ![desktop home](/documentation/index.jpg)
 
-Mobile - Home Page
+Mobile - Home Page <br>
 ![mobile home](/documentation/mobile_index.jpg)
 
 The first test showed that there wasn't sufficient contrast between the text colour and the background colour so this was changed to the darker colour of #263238.
