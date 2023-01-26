@@ -150,6 +150,7 @@ As an administrator of the site, I want to be able to:
     - admin testers confirmed they could receive messages via the form.
 
 ___
+
 ### Nav Bar
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
@@ -185,17 +186,130 @@ ___
 | Search bar | search is performed when user enters a search term. | searched for woodland, chocolate, space, superhero, tent | The search returned sites containing the search term. | pass |
 | Search bar | Message appears to inform user there are no search results when search is performed without a matching search term. | searched for woodland, chocolate, space, superhero, tent | The search returned the error message. | pass |
 | search button | Performs search when button is clicked. | clicked button | Search successfully performed | pass |
+| links for search | redirect to Find a campsite page | clicked link | redirected to Find a campsite page | pass |
+| links for submit | redirect to Add Review page | clicked link | redirected to Add Review page | pass |
+| links for search, submit & save | hyperlink hover changes colour | hovered over link | link changed colour | pass |
 
 
-
-### Footer
-
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| --- | --- | --- | --- | --- |
-
-### Footer
+### Find Campsite Page
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
+| Search bar | search is performed when user enters a search term. | searched for woodland, chocolate, space, superhero, tent | The search returned sites containing the search term. | pass |
+| Search bar | Message appears to inform user there are no search results when search is performed without a matching search term. | searched for woodland, chocolate, space, superhero, tent | The search returned the error message. | pass |
+| search button | Performs search when button is clicked. | clicked button | Search successfully performed | pass |
+| Image | displayed from url | visited page | image displayed | pass |
+| Image | displayed from static if missing url | visited page | image displayed | pass |
+| View button | redirects to site id review | clicked button | redirects to correct site id review | pass |
+| Edit button | redirects to edit site id review | clicked button | redirects to correct site id review to edit | pass |
+| Delete button | redirects to delete modal | clicked button | redirects to delete modal | pass |
+
+### Profile Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
+| Users site reviews | Profile page displays all of the user's reviews | clicked on Profile hyperlink on Nav Bar | redirected to Profile page, review cards displayed  | pass |
+| Username  | Username displays in title  | logged in and went to Profile page | Username displayed in title | pass |
+| View button | redirects to site id review | clicked button | redirects to correct site id review | pass |
+| Edit button | redirects to edit site id review | clicked button | redirects to correct site id review to edit | pass |
+| Delete button | redirects to delete modal | clicked button | redirects to delete modal | pass |
+
+
+### View Review Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Image | displayed from url | visited page | image displayed | pass |
+| Edit button | redirects to edit site id page | clicked button | redirects to correct site id to edit | pass |
+| Delete button | redirects to delete modal | clicked button | redirects to delete modal | pass |
+| buttons | hyperlink hover changes colour | hovered over link | link changed colour | pass |
+
+### Add Review Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Access to page | page should not display unless user is logged in | stayed logged out | hyperlink hidden | pass |
+| Form input | Should prompt user to enter input if left blank | left input blank and clicked send button | tooltip indicates the field needs completing | pass |
+| Location input | dropdown list should appear | clicked dropdown carrat | location drop down appeared | pass |
+| Date input | Should open date picker | clicked on input field | datepicker appeared | pass |
+| Members only toggle | toggle switch should be able to set to on or off | clicked toggle | toggle switch can be turned on and off | pass |
+| cancel button | redirect to Find Campsite page | clicked cancel button | redirected to Find Campsite page | pass |
+| Add review button | add review to database | clicked add button | review added to database | pass |
+
+
+### Manage Location Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Access to page | page should not display unless Admin user logged in | logged in as non-admin user | hyperlink hidden | pass |
+| Add location button | redirect to Add Location page | clicked add button | redirected to Add Location page | pass |
+| Edit button | redirects to edit location id page | clicked button | redirects to correct location id to edit | pass |
+| Delete button | redirects to delete modal | clicked button | redirects to delete modal | pass |
+| buttons | hyperlink hover changes colour | hovered over link | link changed colour | pass |
+
+### Add Location Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Access to page | page should not display unless Admin user logged in | logged in as non-admin user | hyperlink hidden | pass |
+| Form input | Should prompt user to enter input if left blank | left input blank and clicked send button | tooltip indicates the field needs completing | pass |
+| cancel button | redirect to Manage Locations page | clicked cancel button | redirected to Manage Locations page | pass |
+| Add location button | add location to database | clicked add button | location added to database | pass |
+| buttons | hyperlink hover changes colour | hovered over link | link changed colour | pass |
+
+### Edit Location Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Access to page | page should not display unless Admin user logged in | logged in as non-admin user | hyperlink hidden | pass |
+| Form input | Should be prepopulated correctly for location id | checked prepopulated correctly | Correct location prepopulated | pass |
+| cancel button | redirect to Manage Locations page | clicked cancel button | redirected to Manage Locations page | pass |
+| Edit location button | append location name to database | clicked edit button | location appended to database | pass |
+| buttons | hyperlink hover changes colour | hovered over link | link changed colour | pass |
+
+### Sign Up Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Form input | Should prompt user to enter input if left blank | left input blank and clicked send button | tooltip indicates the field needs completing | pass |
+| Form input - username & password | The field should be between 5-15 characters long  | enter less than 5 characters | tooltip indicates the field is invalid | pass |
+| Form input - username & password | The field should be between 5-15 characters long  | enter more than 5 characters | tooltip indicates the field is invalid | pass |
+| Form input | Should prompt user to enter input if left blank | left input blank and clicked send button | tooltip indicates the field needs completing | pass |
+| Invalid username | Error message should display if username is already registered  | user pre-registered username | error message appeared | pass |
+| Sign Up button | add user to database | clicked Sign Up button | user added to database | pass |
+| Logn In hyperlink | redirect user to Log In page | clicked hyperlink | redirected to Log In page | pass |
+| buttons | hyperlink hover changes colour | hovered over link | link changed colour | pass |
+
+### Log In Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Form input | Should prompt user to enter input if left blank | left input blank and clicked send button | tooltip indicates the field needs completing | pass |
+| Log In button | add user to session and redirects to Profile page. Flash message to welcome user | clicked Login button | user redirected to Profile page. Flash welcome message displayed | pass |
+| Sign Up hyperlink | redirect user to Sign Up page | clicked hyperlink | redirected to Sign Up page | pass |
+| buttons | hyperlink hover changes colour | hovered over link | link changed colour | pass |
+
+### Contact Us Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Form input | Should prompt user to enter input if left blank | left input blank and clicked send button | tooltip indicates the field needs completing | pass |
+| Send button | Should send the form to the admin email account | completed form and clicked send button, checked admin mailbox | Email received containing information from form | pass |
+| auto-reply email | User completing the form should receive the auto-reply email | users checked their mailbox | Auto-reply had been received. | pass |
+
+### Delete Modal
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| delete review | review should be deleted from database | clicked delete | review deleted from database | pass |
+| cancel button | redirect to Find a Campsite page | clicked cancel button | redirected to Find a campsite page | pass |
+| delete location | location should be deleted from database | clicked delete | location deleted from database | pass |
+| cancel button | redirect to Manage Locations page | clicked cancel button | redirected to Manage Locations page | pass |
+
+### 404 Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| display page | page should display when an error is made with site url | removed character from site url | 404 page displayed | pass |
+| home hyperlink | redirect user to Home page | clicked hyperlink | redirected to Home page | pass |
+| hyperlink | hyperlink hover changes colour | hovered over link | link changed colour | pass |
