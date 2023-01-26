@@ -193,22 +193,19 @@ Modals have been used on pages that involve the ability to delete something, for
 
 The website consists of twelve pages that run from a base page:
 
-- Home page
-- Find Campsite page
-- Campsite Review Page
-- Sign Up page
-- Log in page
-- Contact page
-
-- Profile page
-- Add a review page
-- Edit a review page
-
-- Manage Locations page
-- Add a location page
-- Edit a location page
-
-- 404 error page
+* Home page
+* Find Campsite page
+* Campsite Review Page
+* Sign Up page
+* Log in page
+* Contact page
+* Profile page
+* Add a review page
+* Edit a review page
+* Manage Locations page
+* Add a location page
+* Edit a location page
+* 404 error page
 
 
 All users can open the following pages: 
