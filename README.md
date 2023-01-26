@@ -321,19 +321,19 @@ HTML, CSS, JavaScript & Python
 
 ### Frameworks, Libraries and Programs Used
 
-MongoDB Atlas - database server, noSQL.
-Flask - micro web framework written in Python.
-mongoDB shell - command shell.
-dnspython - DNS toolkit for Python.
-PyMongo - Python-Mongo library. 
-Pip - for installing Python packages.
-Jinga - to generate markup as well as source code.
-Balsamiq - to produce wireframes.
-Git - for version control.
-Github - to save files for the website.
-Google Fonts - to import fonts.
-TinyPNG - to compress files.
-LucidCharts - to produce the site flow chart.
+* MongoDB Atlas - database server, noSQL.
+* Flask - micro web framework written in Python.
+* mongoDB shell - command shell.
+* dnspython - DNS toolkit for Python.
+* PyMongo - Python-Mongo library. 
+* Pip - for installing Python packages.
+* Jinga - to generate markup as well as source code.
+* Balsamiq - to produce wireframes.
+* Git - for version control.
+* Github - to save files for the website.
+* Google Fonts - to import fonts.
+* TinyPNG - to compress files.
+* LucidCharts - to produce the site flow chart.
 
 
 [Back to top](#table-of-contents)
@@ -367,7 +367,7 @@ To deploy the Happy Camper website to Heroku the following steps were taken:
 
 
 
-### Cloning the Repository
+### Cloning the Git Hub Repository
 
 It may be necessary to clone the repository from GitHub to your local computer. Cloning the repository makes a copy of all the of repository data and takes it from GitHub to your local machine. The following steps, detailed below, should be taken to clone a repository:
 
