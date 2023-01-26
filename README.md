@@ -347,6 +347,40 @@ ___
 
 ## 5. Deployment
 ### Heroku
+
+To deploy the Happy Camper website to Heroku the following steps were taken:
+1.	Create a Procfile by using the command echo web: python app.py > Procfile at the terminal prompts. Any extra lines need to be removed from the end of the Procfile.
+2.	Create a requirements.txt file using the command pip3 freeze —local > requirements.txt
+3.	Create then a Heroku account and then log in.
+4.	Click the create new app button. Provide a name for the app (must be unique within Heroku) and choose the closest region to your location (namely Europe).
+5.	Set up deployment from GitHub repository ( Deploy > Deployment method > GitHub) - at this stage automatic deployment from GitHub repository should not be selected.
+6.	Choose the appropriate GitHub repository from the options.
+7.	Select the Reveal Config Vars option and set the config vars as follows:
+
+| Key    | Value |
+| ----------- | ----------- |
+| Set Secret Key  | < secret key value >     |
+|  IP | "0.0.0.0"        |
+|  PORT | "5000"        |
+|  MONGO_DB NAME | "happyCamperDB"       |
+|  MONGO_URI |   “mongodb+srv://happycamping: < password >@ @happycamper.h5xj7d4.mongodb.net/happyCamperDB?retryWrites=true&w=majority"      |
+
+
+
+### Cloning the Repository
+
+It may be necessary to clone the repository from GitHub to your local computer. Cloning the repository makes a copy of all the of repository data and takes it from GitHub to your local machine. The following steps, detailed below, should be taken to clone a repository:
+
+1.	Navigate to the main page of the repository (in this case https://github.com/EmmaJane22/HappyCamper).
+2.	Select the button labelled Code.
+3.	To clone the repo using HTTPS select the "HTTPS" option; to clone using an SSH key select the second option "SSH"; to clone using GitHub CLI select the third "GitHub CLI" option. Use the clipboard icon to copy the relevant information.
+4.	Open Git Bash and change the working directory to the location where you wish the cloned repo to be stored.
+5.	Use the git clone command and paste in the information copied in step 3 and Press Enter to create a local clone.
+6.	If you wish to clone the repo to GitHub Desktop repeat steps 1 & 2 and from there select the "Open with GitHub Desktop" option.
+7.	Follow the on screen prompts from within GitHub Desktop (this option required GitHub Desktop to be installed to be successful).
+
+(source: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+
 [Back to top](#table-of-contents)
 ___
 
