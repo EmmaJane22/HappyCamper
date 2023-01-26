@@ -83,7 +83,6 @@ As an administrator of the site, I want to be able to:
 * edit locations categories.
 * delete locations categories.
 * receive email messages from site users.
-* email messages from site users.
 
 
 ### Colour Scheme
