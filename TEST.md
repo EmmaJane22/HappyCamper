@@ -7,10 +7,8 @@
 
 4. [Testing](#testing)
     - [Code Validation](#code-validation)
-    - [Manual Testing](#manual-testing)
-    - [Accessibility](#accessibility)
-    - [Tools Testing](#tools-testing)
     - [Testing User Stories](#testing-user-stories)
+    - [Manual Testing](#manual-testing)
     - [Bugs & Fixes](#bugs-&-fixes)
 
 ## Code Validation
@@ -54,6 +52,7 @@ PEP8Ci was used to validate the python code used in the app.py file. No errors w
 
 ## Lighthouse
 
+Responsivity tests were carried out using Google Chrome DevTools throughout the project.
 The site has been run through the Lighthouse test on Google Developer Tools and achieved the following results:
 
 Desktop - Home Page <br>
@@ -67,6 +66,7 @@ The first test showed that there wasn't sufficient contrast between the text col
 It also identified that the footer text was also not high enough contrast so the styling on that was increased to a h6 so that it was more legible.
 
 Performance on some pages was lower than hoped which seemed to be affected by the external URLs for the site reviews.
+
 
 ___
 
@@ -84,9 +84,8 @@ ___
 
 * The site was responsive on all browsers and all devices.
 
-### Manual Testing on Mobile and Desktop Devices
-
 ___
+
 ## Testing User Stories
 
 As a first time user, I want to:
@@ -97,7 +96,7 @@ As a first time user, I want to:
 * be able to search for campsite reviews.
     - All users can access the search tool regardless of whether they have an account. 
 * be able to sign up to the site quickly.
-    - testers resported that they found signing up easy and quick.
+    - testers reported that they found signing up easy and quick.
 * be able to submit a review of a campsite.
     - all testers reported being able to submit a review easily.
 * know that my reviews are protected from other people editing or deleting them.
@@ -150,6 +149,8 @@ As an administrator of the site, I want to be able to:
     - admin testers confirmed they could receive messages via the form.
 
 ___
+
+## Manual Testing on Mobile and Desktop Devices
 
 ### Nav Bar
 
@@ -313,3 +314,20 @@ ___
 | display page | page should display when an error is made with site url | removed character from site url | 404 page displayed | pass |
 | home hyperlink | redirect user to Home page | clicked hyperlink | redirected to Home page | pass |
 | hyperlink | hyperlink hover changes colour | hovered over link | link changed colour | pass |
+
+
+___
+
+| Bug | How I solved the issue |
+| :--- | :--- |
+| Werzberg error showed Log out link not working  | On inspection the redirect in app.py was set to login rather than landing_page. Changed the redirect address. |
+| Contact form wasn’t sending email |  Wrong setting saved for service, changed to correct service id. |
+| Linting error for app.py - PEP8 warning: Missing two blank lines | Added additional blank lines. |
+| Within manage locations html, when you click on delete modal, it does not delete the selected location. | By using Dev Tools inspect and running the site in debug mode, I realised that all the modals had the same ID. This meant that when delete was pressed, regardless of which location was selected, the first location in the database was being deleted as the wrong modal was being displayed, which meant the delete link in that modal had the wrong location ID. On closer inspection the same was happening with the site modal. To resolve this, I appended the location id/site id onto the modal element id. |
+| Edit review page displaying missing image icon in top left corner. | URL field was missing forward slash, added that. |
+| Review page not displaying static image | Added an if statement to display static image if missing image url |
+| Delete app route not working | Added the missing @ in app route |
+| Not redirecting to Login page when I tried to log in as an unregistered user | Change app route to return redirect(url_for("login")) |
+
+
+
