@@ -331,5 +331,9 @@ ___
 | Delete app route not working | Added the missing @ in app route |
 | Not redirecting to Login page when I tried to log in as an unregistered user | Change app route to return redirect(url_for("login")) |
 
+___
 
+Back to [README.md](README.md)
+
+___
 
