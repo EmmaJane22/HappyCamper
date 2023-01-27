@@ -406,8 +406,12 @@ https://materializecss.com/text-inputs.html
 https://stackoverflow.com/questions/29516093/how-to-redirect-to-a-external-404-page-python-flask
 
 
-* Code Institute's Task Manager mini-project tutorial 
+* Code Institute's Task Manager mini-project tutorial
 https://codeinstitute.net/
+
+* Code Institute’s tutorial for EmailJS was used for the Email functionality
+Putting it all together > Sending Emails Using EmailJS > Sending Emails!
+
 
 
 ### Media
