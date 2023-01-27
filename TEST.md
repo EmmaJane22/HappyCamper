@@ -318,6 +318,8 @@ ___
 
 ___
 
+## Bugs & Fixes
+
 | Bug | How I solved the issue |
 | :--- | :--- |
 | Werzberg error showed Log out link not working  | On inspection the redirect in app.py was set to login rather than landing_page. Changed the redirect address. |
